@@ -161,7 +161,9 @@ public class LoginJFrame extends javax.swing.JFrame {
         );
 
         buttonLogin.addActionListener(listener);
+        textUser.getAccessibleContext().setAccessibleDescription("");
         textPassword.addActionListener(listener);
+        textPassword.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
