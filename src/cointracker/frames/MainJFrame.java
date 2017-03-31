@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cointracker;
+package cointracker.frames;
 
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
@@ -205,7 +206,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        
+        RegisterCategoryInternalJFrame category = new RegisterCategoryInternalJFrame();
+        jDesktopPane2.add(category);
+        category.setTitle("Cadastrar categoria");
+        category.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -232,7 +236,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         JOptionPane.showMessageDialog(
-                rootPane, "Criado por: \nDavid Vitor Antonio e Gabriel Abel Ortolan", "Sobre", 3);
+                rootPane, "Criado por: \nDavid Vitor Antonio e Gabriel Abel Ortolan", "Sobre", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**

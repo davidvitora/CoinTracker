@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cointracker;
+package cointracker.frames;
 
 import java.awt.Color;
 
@@ -163,9 +163,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         );
 
         buttonLogin.addActionListener(listener);
-        textUser.getAccessibleContext().setAccessibleDescription("");
         textPassword.addActionListener(listener);
-        textPassword.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
