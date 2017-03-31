@@ -61,6 +61,8 @@ public class LoginJFrame extends javax.swing.JFrame {
         buttonLogin.setBackground(new java.awt.Color(109, 138, 181));
         buttonLogin.setForeground(new java.awt.Color(109, 138, 181));
         buttonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonLogin.jpg"))); // NOI18N
+        buttonLogin.setToolTipText("");
+        buttonLogin.setFocusCycleRoot(true);
         buttonLogin.setOpaque(false);
         buttonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +73,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         textUser.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         textUser.setForeground(java.awt.Color.gray);
         textUser.setText("Usuário");
-        textUser.setToolTipText("AAA");
+        textUser.setToolTipText("");
         textUser.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
         textUser.setCaretColor(new java.awt.Color(153, 153, 255));
         textUser.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -88,7 +90,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         textPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         textPassword.setForeground(java.awt.Color.gray);
         textPassword.setText("Senha");
-        textPassword.setToolTipText("Login");
+        textPassword.setToolTipText("");
         textPassword.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.gray));
         textPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {

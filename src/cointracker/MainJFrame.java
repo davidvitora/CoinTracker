@@ -5,6 +5,8 @@
  */
 package cointracker;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author David .V
@@ -176,6 +178,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenu4.setIconTextGap(0);
 
         jMenuItem10.setText("Sobre");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem10);
 
         jMenuBar1.add(jMenu4);
@@ -198,7 +205,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -210,7 +217,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        RegisterFixExpense fixExpense = new RegisterFixExpense();
+        RegisterFixExpenseInternalJFrame fixExpense = new RegisterFixExpenseInternalJFrame();
         jDesktopPane2.add(fixExpense);
         fixExpense.setTitle("Despesa Fixa");
         fixExpense.setVisible(true);
@@ -222,6 +229,11 @@ public class MainJFrame extends javax.swing.JFrame {
         variableExpense.setTitle("Despesa Variável");
         variableExpense.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        JOptionPane.showMessageDialog(
+                rootPane, "Criado por: \nDavid Vitor Antonio e Gabriel Abel Ortolan", "Sobre", 3);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments

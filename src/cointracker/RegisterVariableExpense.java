@@ -51,6 +51,8 @@ public class RegisterVariableExpense extends javax.swing.JInternalFrame {
 
         jButton1.setText("OK");
 
+        setClosable(true);
+        setMaximizable(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(322, 264));
 
