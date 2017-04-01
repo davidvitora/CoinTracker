@@ -120,6 +120,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Conta");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -238,6 +243,12 @@ public class MainJFrame extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(
                 rootPane, "Criado por: \nDavid Vitor Antonio e Gabriel Abel Ortolan", "Sobre", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        RegisterAccountJInternalFrame registerAccount = new RegisterAccountJInternalFrame();
+        registerAccount.setVisible(true);
+        jDesktopPane2.add(registerAccount);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

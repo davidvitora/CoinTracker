@@ -36,6 +36,7 @@ public class RegisterFixExpenseInternalJFrame extends javax.swing.JInternalFrame
         jButton1 = new javax.swing.JButton();
 
         setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 
         comboBoxExpenseCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
