@@ -5,6 +5,10 @@
  */
 package cointracker.frames;
 
+import cointracker.frames.internalFrames.RegisterVariableExpense;
+import cointracker.frames.internalFrames.RegisterFixExpenseInternalJFrame;
+import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
+import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
 import cointracker.entities.Category;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -76,7 +80,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 535, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -87,9 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jDesktopPane2)
-                .addContainerGap())
+            .addComponent(jDesktopPane2)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(109, 138, 181));

@@ -1,7 +1,7 @@
 package ActionListener;
 
 import cointracker.frames.MainJFrame;
-import cointracker.frames.RegisterAccountJInternalFrame;
+import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

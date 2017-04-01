@@ -1,12 +1,14 @@
-package cointracker.frames;
+package contracker.listener;
 
+import cointracker.frames.LoginJFrame;
+import cointracker.frames.MainJFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
 public class ActionListenerLoginJFrame implements ActionListener {
     
-    LoginJFrame frame;
+    public LoginJFrame frame;
     
     public ActionListenerLoginJFrame(LoginJFrame frame){
         this.frame = frame;

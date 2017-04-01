@@ -5,6 +5,7 @@
  */
 package cointracker.frames;
 
+import contracker.listener.ActionListenerLoginJFrame;
 import java.awt.Color;
 
 /**
@@ -274,6 +275,6 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelUser;
     public javax.swing.JTextField textPassword;
-    protected javax.swing.JTextField textUser;
+    public javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
 }
