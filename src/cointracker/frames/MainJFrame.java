@@ -5,6 +5,8 @@
  */
 package cointracker.frames;
 
+import cointracker.entities.Category;
+import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 
@@ -14,9 +16,9 @@ import javax.swing.JOptionPane;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainJFrame
-     */
+    /**Objetos de listas*/
+    ArrayList<Category> categoriesList = new ArrayList<Category>();
+    
     public MainJFrame() {
         initComponents();
     }
@@ -206,9 +208,8 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        RegisterCategoryInternalJFrame category = new RegisterCategoryInternalJFrame();
+        RegisterCategoryInternalJFrame category = new RegisterCategoryInternalJFrame(categoriesList);
         jDesktopPane2.add(category);
-        category.setTitle("Cadastrar categoria");
         category.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -223,14 +224,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         RegisterFixExpenseInternalJFrame fixExpense = new RegisterFixExpenseInternalJFrame();
         jDesktopPane2.add(fixExpense);
-        fixExpense.setTitle("Despesa Fixa");
         fixExpense.setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         RegisterVariableExpense variableExpense = new RegisterVariableExpense();
         jDesktopPane2.add(variableExpense);
-        variableExpense.setTitle("Despesa Variável");
         variableExpense.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
