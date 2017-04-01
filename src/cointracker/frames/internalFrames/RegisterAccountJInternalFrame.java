@@ -6,6 +6,8 @@
 package cointracker.frames.internalFrames;
 
 import ActionListener.RegisterAccountActionListener;
+import cointracker.entities.Account;
+import java.util.ArrayList;
 import javax.swing.event.InternalFrameListener;
 
 /**
@@ -15,13 +17,105 @@ import javax.swing.event.InternalFrameListener;
 public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
     RegisterAccountActionListener actionListener;
+    public ArrayList<Account> listAccount;
     
-    public RegisterAccountJInternalFrame() {
+    //Guarda o registro da conta acessada
+    public int idAccount;
+    public Account account;
+    
+    public RegisterAccountJInternalFrame(ArrayList<Account> accountList) {
         initComponents();
+        this.listAccount = accountList;
         actionListener = new RegisterAccountActionListener(this);
-        this.buttonOk.addActionListener(actionListener);
+        addActionListeners();
+        setEditMode(false);
+        initFrameAccount();
     }
+    
+    public void initFrameAccount(){
+        idAccount = 0;
+        if(listAccount.size() == 0){
+            account = new Account();
+            readAccount(account);
+            setEditMode(true);
+            buttonEdit.setEnabled(false);
+        }else{
+            readAccount(listAccount.get(idAccount));
+        }
+    }
+    
+    public void readAccount(Account account){
+        this.account = account;
+        labelId.setText(Integer.toString( this.account.getId()));
+        textFieldDesciption.setText(this.account.getDescription());
+        textFieldOpeningBalance.setText(Double.toString(this.account.getOpeningBalance()));
+        comboBoxAccountType.setSelectedIndex(this.account.getType());
+        textFieldOwnerName.setText(this.account.getOwnerName());
+        comboBoxOwnerType.setSelectedIndex(this.account.getOwnerType());
+        textFieldDocument.setText(this.account.getcPF());
+        if(account.getOwnerType() == 0){
+            labelDocumentOwner.setText("CPF : ");            
+        }else{
+            labelDocumentOwner.setText("CNPJ : ");  
+        }
+    }
+    
+    public void saveChanges(){
+        account.setId(Integer.parseInt(labelId.getText()));
+        account.setDescription(textFieldDesciption.getText());
+        account.setOpeningBalance(Double.parseDouble(textFieldOpeningBalance.getText()));
+        account.setBalance(Double.parseDouble(labelActualBalance.getText()));
+        account.setType(comboBoxAccountType.getSelectedIndex());
+        account.setOwnerName(textFieldOwnerName.getText());
+        account.setcPF(textFieldDocument.getText());
+        account.setOwnerType(comboBoxOwnerType.getSelectedIndex());
+    }
+    
+    public void setEditMode(boolean enable){
+        
+        if(enable == true){
+            //Botões de controle
+            buttonOk.setEnabled(true);
+            buttonLeft.setEnabled(false);
+            buttonRigth.setEnabled(false);
+            buttonEdit.setText("Cancelar");
+            buttonEdit.setEnabled(true);
+            buttonNew.setText("Desfazer");
+            
+            //Item de formulario
+            textFieldDesciption.setEnabled(true);
+            textFieldDocument.setEnabled(true);
+            textFieldOpeningBalance.setEnabled(true);
+            textFieldOwnerName.setEnabled(true);
+            comboBoxAccountType.setEnabled(true);
+            comboBoxOwnerType.setEnabled(true);
+        }else{
+            //Botões de controle
+            buttonOk.setEnabled(false);
+            buttonLeft.setEnabled(true);
+            buttonRigth.setEnabled(true);
+            buttonEdit.setEnabled(true);
+            buttonEdit.setText("Editar");
+            buttonNew.setText("Novo");
 
+            //Item de formulario
+            textFieldDesciption.setEnabled(false);
+            textFieldDocument.setEnabled(false);
+            textFieldOpeningBalance.setEnabled(false);
+            textFieldOwnerName.setEnabled(false);
+            comboBoxAccountType.setEnabled(false);
+            comboBoxOwnerType.setEnabled(false);
+        }
+    }
+    
+    public void addActionListeners(){
+        buttonEdit.addActionListener(actionListener);
+        buttonLeft.addActionListener(actionListener);
+        buttonOk.addActionListener(actionListener);
+        buttonRigth.addActionListener(actionListener);
+        buttonNew.addActionListener(actionListener);
+        comboBoxOwnerType.addActionListener(actionListener);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,31 +129,30 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        buttonRigth = new javax.swing.JButton();
+        buttonLeft = new javax.swing.JButton();
+        buttonNew = new javax.swing.JButton();
+        buttonEdit = new javax.swing.JButton();
+        buttonEdit.setActionCommand("buttonEditCliked");
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        textFieldDesciption = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        textFieldOpeningBalance = new javax.swing.JTextField();
+        labelId = new javax.swing.JLabel();
+        labelActualBalance = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        typeAccountComboBox = new javax.swing.JComboBox<>();
+        comboBoxAccountType = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldOwnerName = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        comboBoxOwnerType = new javax.swing.JComboBox<>();
+        labelDocumentOwner = new javax.swing.JLabel();
+        textFieldDocument = new javax.swing.JFormattedTextField();
         buttonOk = new javax.swing.JButton();
 
         jLabel7.setText("jLabel7");
@@ -70,13 +163,19 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         setTitle("Contas");
         setPreferredSize(new java.awt.Dimension(300, 350));
 
-        jButton4.setText(">");
+        buttonRigth.setActionCommand("buttonRigthCliked");
+        buttonRigth.addActionListener(this.actionListener);
+        buttonRigth.setText(">");
 
-        jButton3.setText("<");
+        buttonLeft.setActionCommand("buttonLeftCliked");
+        buttonLeft.addActionListener(this.actionListener);
+        buttonLeft.setText("<");
 
-        jButton2.setText("Desfazer");
+        buttonNew.setActionCommand("buttonNewCliked");
+        buttonNew.addActionListener(this.actionListener);
+        buttonNew.setText("Novo");
 
-        jButton5.setText("Editar");
+        buttonEdit.setText("Editar");
 
         jTabbedPane1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
 
@@ -86,15 +185,19 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Saldo Inicial : ");
 
+        textFieldDesciption.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+
         jLabel4.setText("Saldo Atual:");
 
-        jLabel5.setText("0");
+        textFieldOpeningBalance.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
-        jLabel6.setText("0");
+        labelId.setText("0");
+
+        labelActualBalance.setText("0");
 
         jLabel13.setText("Tipo : ");
 
-        typeAccountComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pessoal", "Compartilhada", "Empresarial" }));
+        comboBoxAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pessoal", "Compartilhada", "Empresarial" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -106,30 +209,30 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldOpeningBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5))
+                                .addComponent(labelId))
                             .addComponent(jLabel1))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
+                                .addComponent(labelActualBalance)
                                 .addGap(70, 70, 70))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2)
+                                .addComponent(textFieldDesciption)
                                 .addContainerGap())))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(typeAccountComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboBoxAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -139,20 +242,20 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(labelId)
+                    .addComponent(labelActualBalance))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldDesciption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldOpeningBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(typeAccountComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 64, Short.MAX_VALUE))
         );
 
@@ -160,13 +263,27 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Nome : ");
 
+        textFieldOwnerName.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+
         jLabel9.setText("Tipo : ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fisica", "Juridica" }));
+        comboBoxOwnerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fisica", "Juridica" }));
+        comboBoxOwnerType.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxOwnerTypeItemStateChanged(evt);
+            }
+        });
+        comboBoxOwnerType.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+                comboBoxOwnerTypeCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
 
-        jLabel10.setText("CNPJ : ");
+        labelDocumentOwner.setText("CPF : ");
 
-        jLabel12.setText("CPF : ");
+        textFieldDocument.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,21 +295,17 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1))
+                        .addComponent(textFieldOwnerName))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(comboBoxOwnerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
+                                .addComponent(labelDocumentOwner)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jFormattedTextField2)))
+                                .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 82, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -202,26 +315,23 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textFieldOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxOwnerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                    .addComponent(labelDocumentOwner)
+                    .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Responsavel", jPanel2);
 
         buttonOk.setText("Ok");
         buttonOk.setActionCommand("OkRegisterAccount");
+        buttonOk.addActionListener(this.actionListener);
         buttonOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOkActionPerformed(evt);
@@ -236,13 +346,13 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton5)
+                        .addComponent(buttonEdit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(buttonNew)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(buttonLeft)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(buttonRigth)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -257,13 +367,11 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton5)
-                            .addComponent(jButton3)))
+                    .addComponent(buttonNew, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)))
+                        .addComponent(buttonEdit)
+                        .addComponent(buttonLeft))
+                    .addComponent(buttonRigth))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -271,7 +379,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonOk, jButton2, jButton3, jButton4, jButton5});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonEdit, buttonLeft, buttonNew, buttonOk, buttonRigth});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -291,26 +399,33 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_buttonOkActionPerformed
 
+    private void comboBoxOwnerTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxOwnerTypeItemStateChanged
+        if(comboBoxOwnerType.getSelectedIndex() == 0){
+            labelDocumentOwner.setText("CPF : ");            
+        }else{
+            labelDocumentOwner.setText("CNPJ : ");  
+        }
+    }//GEN-LAST:event_comboBoxOwnerTypeItemStateChanged
+
+    private void comboBoxOwnerTypeCaretPositionChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_comboBoxOwnerTypeCaretPositionChanged
+
+    }//GEN-LAST:event_comboBoxOwnerTypeCaretPositionChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonOk;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    public javax.swing.JButton buttonEdit;
+    public javax.swing.JButton buttonLeft;
+    public javax.swing.JButton buttonNew;
+    public javax.swing.JButton buttonOk;
+    public javax.swing.JButton buttonRigth;
+    private javax.swing.JComboBox<String> comboBoxAccountType;
+    public javax.swing.JComboBox<String> comboBoxOwnerType;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -319,9 +434,12 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JComboBox<String> typeAccountComboBox;
+    private javax.swing.JLabel labelActualBalance;
+    public javax.swing.JLabel labelDocumentOwner;
+    private javax.swing.JLabel labelId;
+    private javax.swing.JTextField textFieldDesciption;
+    private javax.swing.JFormattedTextField textFieldDocument;
+    private javax.swing.JTextField textFieldOpeningBalance;
+    private javax.swing.JTextField textFieldOwnerName;
     // End of variables declaration//GEN-END:variables
 }
