@@ -12,6 +12,7 @@ import cointracker.frames.internalFrames.RegisterFixExpenseInternalJFrame;
 import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
 import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
 import cointracker.entities.Category;
+import cointracker.entities.Provider;
 import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.JOptionPane;
@@ -27,10 +28,13 @@ public class MainJFrame extends javax.swing.JFrame {
     /**Objetos de listas*/
     public ArrayList<Category> categoriesList = new ArrayList<Category>();
     public ArrayList<Account> accountList = new ArrayList<Account>();
+    public ArrayList<Provider> providerList = new ArrayList<Provider>();
     
     public MainJFrame() {
         initComponents();
         buttonRegisterAccount.addActionListener(listener);
+        buttonRegisterProvider.addActionListener(listener);
+        
     }
 
     /**
@@ -50,7 +54,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         buttonFiles = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        buttonRegisterProvider = new javax.swing.JMenuItem();
         buttonRegisterAccount = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -132,8 +136,9 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         buttonFiles.add(jMenuItem1);
 
-        jMenuItem2.setText("Fornecedor");
-        buttonFiles.add(jMenuItem2);
+        buttonRegisterProvider.setActionCommand("buttonRegisterProviderClicked");
+        buttonRegisterProvider.setText("Fornecedor");
+        buttonFiles.add(buttonRegisterProvider);
 
         buttonRegisterAccount.setText("Conta");
         buttonRegisterAccount.setActionCommand("buttonRegisterAccountClicked");
@@ -304,6 +309,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu buttonFiles;
     private javax.swing.JMenuItem buttonRegisterAccount;
+    private javax.swing.JMenuItem buttonRegisterProvider;
     public javax.swing.JDesktopPane desktopPane;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu2;
@@ -315,7 +321,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;

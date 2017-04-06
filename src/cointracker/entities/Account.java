@@ -9,8 +9,7 @@ public class Account {
     private double openingBalance; //Saldo inicial
     private String ownerName; //Nome do responsavel ou dono
     private int ownerType; //0 - Fisica 1 - Juridica
-    private String cNPJ; //CNPJ do responsavel
-    private String cPF; //CPF do responsavel
+    private String document; //Numero do documento
     private int type; //0 - Pessoal 1 - Compartilhada 2 - Empresarial
     
     public Account(){
@@ -20,8 +19,7 @@ public class Account {
         openingBalance = 0;
         ownerName = "";
         ownerType = 0;
-        cNPJ = "";
-        cPF = "";
+        document = "";
         type = 0;
     }
 
@@ -65,22 +63,6 @@ public class Account {
         this.type = type;
     }
 
-    public String getcNPJ() {
-        return cNPJ;
-    }
-
-    public void setcNPJ(String cNPJ) {
-        this.cNPJ = cNPJ;
-    }
-
-    public String getcPF() {
-        return cPF;
-    }
-
-    public void setcPF(String cPF) {
-        this.cPF = cPF;
-    }
-
     public double getOpeningBalance() {
         return openingBalance;
     }
@@ -95,5 +77,13 @@ public class Account {
 
     public void setOwnerType(int ownerType) {
         this.ownerType = ownerType;
+    }
+
+    public String getDocument() {
+        return document;
+    }
+
+    public void setDocument(String documento) {
+        this.document = documento;
     }
 }

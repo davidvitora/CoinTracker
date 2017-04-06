@@ -5,9 +5,15 @@
  */
 package cointracker.frames.internalFrames;
 
+import ActionListener.RegisterCategoryActionListener;
 import cointracker.entities.Category;
+import java.awt.List;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashSet;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -15,15 +21,34 @@ import java.util.HashSet;
  */
 public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     
-    ArrayList<Category> categories = new ArrayList<Category>();
+    RegisterCategoryActionListener actionListener;
     Category category = new Category();
+    ArrayList<Category> categories = new ArrayList<>();
+    DefaultListModel<String> model = new DefaultListModel<>();
+    int i=0;
+
+    /**
+     * Creates new form RegisterCategoryInternalJFrame
+     */;
 
     /**
      * Creates new form RegisterCategoryInternalJFrame
      */
     public RegisterCategoryInternalJFrame(ArrayList<Category> categories) {
         initComponents();
-        this.categories = categories;
+        for(i=0 ; i<categories.size(); i++){
+            model.addElement(categories.get(i).getDescription());
+            this.categories = categories;
+        }
+        addActionListeners();
+    }
+    
+    public void saveCategory(){
+        category.setId(i);
+        category.setDescription(DescriptionInput.getText());
+        category.setType(typeComboBox.getSelectedItem().toString());
+        categories.add(category);
+        model.addElement(DescriptionInput.getText());
     }
 
     /**
@@ -37,11 +62,13 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        categoriesList = new JList<>(model);
+        okButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        descriptionText = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        TypeComboBox = new javax.swing.JComboBox<>();
+        typeComboBox = new javax.swing.JComboBox<>();
+        DescriptionInput = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -56,35 +83,30 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(300, 300));
         setPreferredSize(new java.awt.Dimension(300, 300));
 
+        //categoriesList.setVisibleRowCount(10);
+        categoriesList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        categoriesList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jScrollPane2.setViewportView(categoriesList);
+
+        okButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        okButton.setText("OK");
+        okButton.setActionCommand("ClickOK");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okButtonActionPerformed(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Descrição");
-
-        descriptionText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        descriptionText.setPreferredSize(new java.awt.Dimension(59, 30));
-        descriptionText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descriptionTextActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Tipo");
 
-        TypeComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Despesa", "Receita" }));
-        TypeComboBox.setPreferredSize(new java.awt.Dimension(56, 30));
-        TypeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TypeComboBoxActionPerformed(evt);
-            }
-        });
+        typeComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Despesa", "Receita" }));
+
+        DescriptionInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,63 +114,60 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(descriptionText, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addComponent(TypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(210, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(okButton))
+                    .addComponent(DescriptionInput)
+                    .addComponent(typeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(0, 70, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(descriptionText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DescriptionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(typeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                        .addComponent(okButton))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void descriptionTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descriptionTextActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_descriptionTextActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        category.setDescription(descriptionText.getText());
-        if((String)TypeComboBox.getSelectedItem() == "Despesa"){
-            category.setType(2);            
-        }
-        else{
-            category.setType(1);
-        }
-        categories.add(category);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void TypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TypeComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TypeComboBoxActionPerformed
-
+    public void addActionListeners(){
+        okButton.addActionListener(actionListener);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> TypeComboBox;
-    private javax.swing.JTextField descriptionText;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField DescriptionInput;
+    private javax.swing.JList<String> categoriesList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton okButton;
+    private javax.swing.JComboBox<String> typeComboBox;
     // End of variables declaration//GEN-END:variables
 }

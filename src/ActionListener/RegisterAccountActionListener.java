@@ -55,9 +55,6 @@ public class RegisterAccountActionListener implements ActionListener {
                 frame.setEditMode(true);
             }else{
                 frame.setEditMode(false);
-                if(frame.listAccount.contains(frame.account)){
-                    return;
-                }
                 frame.readAccount(frame.listAccount.get(frame.idAccount));
             }
         }

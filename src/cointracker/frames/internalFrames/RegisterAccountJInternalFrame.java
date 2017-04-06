@@ -52,7 +52,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         comboBoxAccountType.setSelectedIndex(this.account.getType());
         textFieldOwnerName.setText(this.account.getOwnerName());
         comboBoxOwnerType.setSelectedIndex(this.account.getOwnerType());
-        textFieldDocument.setText(this.account.getcPF());
+        textFieldDocument.setText(this.account.getDocument());
         if(account.getOwnerType() == 0){
             labelDocumentOwner.setText("CPF : ");            
         }else{
@@ -67,7 +67,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         account.setBalance(Double.parseDouble(labelActualBalance.getText()));
         account.setType(comboBoxAccountType.getSelectedIndex());
         account.setOwnerName(textFieldOwnerName.getText());
-        account.setcPF(textFieldDocument.getText());
+        account.setDocument(textFieldDocument.getText());
         account.setOwnerType(comboBoxOwnerType.getSelectedIndex());
     }
     
