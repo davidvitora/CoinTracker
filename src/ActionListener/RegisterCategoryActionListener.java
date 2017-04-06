@@ -23,7 +23,7 @@ public class RegisterCategoryActionListener implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if("ClickOK".equals(ae.getActionCommand())){
+        if("registerCategoryOKClicked".equals(ae.getActionCommand())){
             frame.saveCategory();
         }
     }

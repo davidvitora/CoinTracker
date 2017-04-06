@@ -21,19 +21,12 @@ import javax.swing.ListSelectionModel;
  */
 public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     
-    RegisterCategoryActionListener actionListener;
+    RegisterCategoryActionListener actionListener = new RegisterCategoryActionListener (this);
     Category category = new Category();
     ArrayList<Category> categories = new ArrayList<>();
     DefaultListModel<String> model = new DefaultListModel<>();
     int i=0;
 
-    /**
-     * Creates new form RegisterCategoryInternalJFrame
-     */;
-
-    /**
-     * Creates new form RegisterCategoryInternalJFrame
-     */
     public RegisterCategoryInternalJFrame(ArrayList<Category> categories) {
         initComponents();
         for(i=0 ; i<categories.size(); i++){
@@ -90,7 +83,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
 
         okButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         okButton.setText("OK");
-        okButton.setActionCommand("ClickOK");
+        okButton.setActionCommand("registerCategoryOKClicked");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okButtonActionPerformed(evt);
@@ -152,7 +145,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_okButtonActionPerformed
 
     public void addActionListeners(){
