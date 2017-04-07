@@ -68,13 +68,13 @@
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonFiles.setActionCommand(&quot;buttonRegisterAccountClicked&quot;);"/>
           </AuxValues>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="buttonRegisterCategory">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Categoria"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonRegisterCategory.setActionCommand(&quot;AddCategory&quot;);"/>
+              </AuxValues>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buttonRegisterProvider">
               <Properties>

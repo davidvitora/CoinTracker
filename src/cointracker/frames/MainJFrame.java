@@ -34,7 +34,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         buttonRegisterAccount.addActionListener(listener);
         buttonRegisterProvider.addActionListener(listener);
-        
+        buttonRegisterCategory.addActionListener(listener);
     }
 
     /**
@@ -53,7 +53,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         buttonFiles = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        buttonRegisterCategory = new javax.swing.JMenuItem();
         buttonRegisterProvider = new javax.swing.JMenuItem();
         buttonRegisterAccount = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -128,13 +128,9 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("Categoria");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        buttonFiles.add(jMenuItem1);
+        buttonRegisterCategory.setActionCommand("AddCategory");
+        buttonRegisterCategory.setText("Categoria");
+        buttonFiles.add(buttonRegisterCategory);
 
         buttonRegisterProvider.setActionCommand("buttonRegisterProviderClicked");
         buttonRegisterProvider.setText("Fornecedor");
@@ -232,12 +228,6 @@ public class MainJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        RegisterCategoryInternalJFrame category = new RegisterCategoryInternalJFrame(categoriesList);
-        desktopPane.add(category);
-        category.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -309,6 +299,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu buttonFiles;
     private javax.swing.JMenuItem buttonRegisterAccount;
+    private javax.swing.JMenuItem buttonRegisterCategory;
     private javax.swing.JMenuItem buttonRegisterProvider;
     public javax.swing.JDesktopPane desktopPane;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -319,7 +310,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

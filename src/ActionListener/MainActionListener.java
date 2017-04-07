@@ -7,6 +7,7 @@ package ActionListener;
 
 import cointracker.frames.MainJFrame;
 import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
+import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
 import cointracker.frames.internalFrames.RegisterProviderJInternalFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +33,11 @@ public class MainActionListener implements ActionListener{
             RegisterProviderJInternalFrame registerProviderJInternalFrame = new RegisterProviderJInternalFrame(frame.providerList);
             frame.desktopPane.add(registerProviderJInternalFrame);
             registerProviderJInternalFrame.setVisible(true);
+        }
+        else if("AddCategory".equals(e.getActionCommand())){
+            RegisterCategoryInternalJFrame registerCategoryInternalJFrame = new RegisterCategoryInternalJFrame(frame.categoriesList);
+            frame.desktopPane.add(registerCategoryInternalJFrame);
+            registerCategoryInternalJFrame.setVisible(true);
         }
     }
 }

@@ -4,17 +4,14 @@
  * and open the template in the editor.
  */
 package ActionListener;
-
 import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 /**
  *
  * @author Gabriel
  */
-public class RegisterCategoryActionListener implements ActionListener{
-    
+public class RegisterCategoryActionListener implements ActionListener {
     RegisterCategoryInternalJFrame frame;
     
     public RegisterCategoryActionListener(RegisterCategoryInternalJFrame frame) {
@@ -22,11 +19,25 @@ public class RegisterCategoryActionListener implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent ae) {
-        if("registerCategoryOKClicked".equals(ae.getActionCommand())){
-            frame.saveCategory();
+    public void actionPerformed(ActionEvent e) {
+        if("OK".equals(e.getActionCommand())){
+            frame.SaveCategory();
         }
+        else if("Back".equals(e.getActionCommand())){
+            frame.Back();
+        }
+        else if("Forward".equals(e.getActionCommand())){
+            frame.Forward();
+        }
+        else if("Edit".equals(e.getActionCommand())){
+            frame.Edit();
+        }
+        else if("Delete".equals(e.getActionCommand())){
+            frame.Delete();
+        }
+        
     }
     
     
+
 }

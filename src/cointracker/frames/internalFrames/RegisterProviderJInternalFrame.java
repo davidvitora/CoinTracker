@@ -77,6 +77,22 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
         provider.setDistrict(textFieldDistrict.getText());
         provider.setStreet(textFieldStreet.getText());
         provider.setNumber(textFieldNumber.getText());
+        System.out.println("------------------------------");
+        System.out.println("Saved provider:");
+        System.out.println(Integer.parseInt(labelId.getText()));
+        System.out.println(textFieldName.getText());
+        System.out.println(comboBoxType.getSelectedIndex());
+        System.out.println(textFieldDocument.getText());
+        System.out.println(checkBoxActive.isSelected());
+        System.out.println(comboBoxCountry.getSelectedIndex());
+        System.out.println(textFieldState.getText());
+        System.out.println(textFieldCity.getText());
+        System.out.println(textFieldDistrict.getText());
+        System.out.println(textFieldStreet.getText());
+        System.out.println(textFieldNumber.getText());
+        System.out.println("------------------------------");
+        
+        
     }
     
     public void setEditMode(boolean enable){

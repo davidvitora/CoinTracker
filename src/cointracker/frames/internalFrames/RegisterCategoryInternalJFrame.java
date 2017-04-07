@@ -5,43 +5,118 @@
  */
 package cointracker.frames.internalFrames;
 
-import ActionListener.RegisterCategoryActionListener;
 import cointracker.entities.Category;
-import java.awt.List;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashSet;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
-import javax.swing.ListSelectionModel;
+import ActionListener.RegisterCategoryActionListener;
 
 /**
  *
- * @author comp8
+ * @author Gabriel
  */
 public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     
-    RegisterCategoryActionListener actionListener = new RegisterCategoryActionListener (this);
-    Category category = new Category();
-    ArrayList<Category> categories = new ArrayList<>();
-    DefaultListModel<String> model = new DefaultListModel<>();
-    int i=0;
-
+    RegisterCategoryActionListener actionListener;
+    ArrayList<Category> categories;
+    Category category;
+    int currentID;
+    boolean editing = false;
+    
     public RegisterCategoryInternalJFrame(ArrayList<Category> categories) {
         initComponents();
-        for(i=0 ; i<categories.size(); i++){
-            model.addElement(categories.get(i).getDescription());
-            this.categories = categories;
-        }
-        addActionListeners();
+        category = new Category();
+        this.categories = categories;
+        actionListener = new RegisterCategoryActionListener(this);
+        AddActionListeners();
+        SetAvailability(true);
+        //InputID.setText(String.valueOf(categories.size() + 1));
     }
     
-    public void saveCategory(){
-        category.setId(i);
-        category.setDescription(DescriptionInput.getText());
-        category.setType(typeComboBox.getSelectedItem().toString());
-        categories.add(category);
-        model.addElement(DescriptionInput.getText());
+    public void SaveCategory(){
+        category.setDescription(inputDescription.getText());
+        category.setType(comboType.getSelectedItem().toString());
+        if(!editing){
+          category.setId(categories.size());
+          categories.add(category); 
+        }
+        Reset();
+        currentID = categories.size();
+        editing = false;
+        SetAvailability(true);
+        System.out.println("-------------------------------------------------");
+        System.out.println("Saved Category["+categories.size()+"]:");
+        System.out.println("ID:" + category.getId());
+        System.out.println("Description:" + category.getDescription());
+        System.out.println("Type:" + category.getType());
+        System.out.println("-------------------------------------------------");
+    }
+    
+    public void Reset(){
+        category = new Category();
+        inputDescription.setText("");
+        comboType.setSelectedItem("Despesa");
+    }
+    
+    public void Delete(){
+        category = categories.get(currentID);
+        categories.remove(category);
+    }
+    
+    public void AddActionListeners(){
+        buttonOK.addActionListener(actionListener);
+        buttonBack.addActionListener(actionListener);
+        buttonFoward.addActionListener(actionListener);
+        buttonEdit.addActionListener(actionListener);
+        buttonDelete.addActionListener(actionListener);
+    }
+    
+    public void SetAvailability(boolean mode){
+        if(mode){
+            inputDescription.setEditable(true);
+            comboType.setEnabled(true);
+            buttonEdit.setEnabled(false);
+            buttonDelete.setEnabled(false);
+        }
+        else{
+            inputDescription.setEditable(false);
+            comboType.setEnabled(false);
+            buttonEdit.setEnabled(true);
+            buttonDelete.setEnabled(true);
+        }
+    }
+    
+    public void Back(){
+        if(currentID > 0){
+            category = categories.get(currentID - 1);
+            inputDescription.setText(category.getDescription());
+            comboType.setSelectedItem(category.getType());
+            currentID -= 1;
+            SetAvailability(false);
+            System.out.println("-------------------------------------------------");
+            System.out.println("Current Category: " + category.getId());
+            System.out.println("Description:" + category.getDescription());
+            System.out.println("Type:" + category.getType());
+            System.out.println("-------------------------------------------------");
+        }
+    }
+    public void Forward(){
+        if(currentID < categories.size() - 1){
+            category = categories.get(currentID + 1);
+            inputDescription.setText(category.getDescription());
+            comboType.setSelectedItem(category.getType());
+            currentID += 1;
+            SetAvailability(false);
+            System.out.println("-------------------------------------------------");
+            System.out.println("Current Category: " + category.getId());
+            System.out.println("Description:" + category.getDescription());
+            System.out.println("Type:" + category.getType());
+            System.out.println("-------------------------------------------------");
+        }
+    }
+    
+    public void Edit(){
+        SetAvailability(true);
+        category = categories.get(currentID);
+        editing = true;
     }
 
     /**
@@ -53,114 +128,122 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        categoriesList = new JList<>(model);
-        okButton = new javax.swing.JButton();
+        buttonEdit = new javax.swing.JButton();
+        buttonBack = new javax.swing.JButton();
+        buttonFoward = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        inputDescription = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        typeComboBox = new javax.swing.JComboBox<>();
-        DescriptionInput = new javax.swing.JTextField();
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        comboType = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        InputID = new javax.swing.JTextField();
+        buttonOK = new javax.swing.JButton();
+        buttonDelete = new javax.swing.JButton();
 
         setClosable(true);
-        setTitle("Categoria");
-        setMaximumSize(new java.awt.Dimension(300, 300));
-        setMinimumSize(new java.awt.Dimension(300, 300));
-        setPreferredSize(new java.awt.Dimension(300, 300));
 
-        //categoriesList.setVisibleRowCount(10);
-        categoriesList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        categoriesList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jScrollPane2.setViewportView(categoriesList);
+        buttonEdit.setActionCommand("Edit");
+        buttonEdit.setText("Editar");
 
-        okButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        okButton.setText("OK");
-        okButton.setActionCommand("registerCategoryOKClicked");
-        okButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
-            }
-        });
+        buttonBack.setActionCommand("Back");
+        buttonBack.setText("<<");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        buttonFoward.setActionCommand("Forward");
+        buttonFoward.setText(">>");
+
         jLabel1.setText("Descrição");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Tipo");
 
-        typeComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        typeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Despesa", "Receita" }));
+        comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Despesa", "Receita" }));
+        comboType.setToolTipText("");
 
-        DescriptionInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setVisible(false);
+        jLabel3.setText("ID");
+
+        InputID.setVisible(false);
+        InputID.setEditable(false);
+
+        buttonOK.setActionCommand("OK");
+        buttonOK.addActionListener(this.actionListener);
+        buttonOK.setText("Gravar");
+
+        buttonDelete.setActionCommand("Delete");
+        buttonDelete.setText("Excluir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel1)
+                                .addComponent(inputDescription)
+                                .addComponent(comboType, 0, 171, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addComponent(InputID))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(buttonBack)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonFoward)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(okButton))
-                    .addComponent(DescriptionInput)
-                    .addComponent(typeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(0, 70, Short.MAX_VALUE)))
+                        .addGap(0, 65, Short.MAX_VALUE)
+                        .addComponent(buttonDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonOK)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DescriptionInput, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(typeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                        .addComponent(okButton))
-                    .addComponent(jScrollPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonBack)
+                    .addComponent(buttonFoward))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(InputID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inputDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboType, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonOK)
+                    .addComponent(buttonEdit)
+                    .addComponent(buttonDelete))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-
-    }//GEN-LAST:event_okButtonActionPerformed
-
-    public void addActionListeners(){
-        okButton.addActionListener(actionListener);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField DescriptionInput;
-    private javax.swing.JList<String> categoriesList;
+    private javax.swing.JTextField InputID;
+    private javax.swing.JButton buttonBack;
+    private javax.swing.JButton buttonDelete;
+    private javax.swing.JButton buttonEdit;
+    private javax.swing.JButton buttonFoward;
+    private javax.swing.JButton buttonOK;
+    private javax.swing.JComboBox<String> comboType;
+    private javax.swing.JTextField inputDescription;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton okButton;
-    private javax.swing.JComboBox<String> typeComboBox;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
