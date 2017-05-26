@@ -1,4 +1,4 @@
-package cointracker.entities;
+package com.empresa.sistema.entities;
 
 import java.util.Date;
 

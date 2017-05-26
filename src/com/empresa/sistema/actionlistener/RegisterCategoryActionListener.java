@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ActionListener;
-import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
+package com.empresa.sistema.actionlistener;
+import com.empresa.sistema.internalframes.RegisterCategoryInternalJFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**

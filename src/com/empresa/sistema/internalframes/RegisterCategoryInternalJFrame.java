@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cointracker.frames.internalFrames;
+package com.empresa.sistema.internalframes;
 
-import cointracker.entities.Category;
+import com.empresa.sistema.entities.Category;
 import java.util.ArrayList;
-import ActionListener.RegisterCategoryActionListener;
+import com.empresa.sistema.actionlistener.RegisterCategoryActionListener;
 
 /**
  *
@@ -141,6 +141,8 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
         buttonDelete = new javax.swing.JButton();
 
         setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 400));
 
         buttonEdit.setActionCommand("Edit");
         buttonEdit.setText("Editar");
@@ -194,7 +196,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
                                 .addComponent(buttonFoward)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 65, Short.MAX_VALUE)
+                        .addGap(0, 163, Short.MAX_VALUE)
                         .addComponent(buttonDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonEdit)
@@ -221,7 +223,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboType, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonOK)
                     .addComponent(buttonEdit)

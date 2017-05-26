@@ -1,7 +1,7 @@
-package contracker.listener;
+package com.empresa.sistema.listener;
 
-import cointracker.frames.LoginJFrame;
-import cointracker.frames.MainJFrame;
+import com.empresa.sistema.frames.LoginJFrame;
+import com.empresa.sistema.frames.MainJFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

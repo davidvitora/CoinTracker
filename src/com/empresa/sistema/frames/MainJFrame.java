@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cointracker.frames;
+package com.empresa.sistema.frames;
 
-import ActionListener.MainActionListener;
-import cointracker.entities.Account;
-import cointracker.frames.internalFrames.RegisterVariableExpense;
-import cointracker.frames.internalFrames.RegisterFixExpenseInternalJFrame;
-import cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
-import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
-import cointracker.entities.Category;
-import cointracker.entities.Provider;
+import com.empresa.sistema.actionlistener.MainActionListener;
+import com.empresa.sistema.entities.Account;
+import com.empresa.sistema.internalframes.RegisterVariableExpense;
+import com.empresa.sistema.internalframes.RegisterFixExpenseInternalJFrame;
+import com.empresa.sistema.internalframes.RegisterCategoryInternalJFrame;
+import com.empresa.sistema.internalframes.RegisterAccountJInternalFrame;
+import com.empresa.sistema.entities.Category;
+import com.empresa.sistema.entities.Provider;
+import com.empresa.sistema.internalframes.RegisterProviderJInternalFrame;
 import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.JOptionPane;
@@ -22,6 +23,48 @@ import javax.swing.JOptionPane;
  * @author David .V
  */
 public class MainJFrame extends javax.swing.JFrame {
+
+    /**
+     * @return the registerAccountJInternalFrame
+     */
+    public RegisterAccountJInternalFrame getRegisterAccountJInternalFrame() {
+        return registerAccountJInternalFrame;
+    }
+
+    /**
+     * @param registerAccountJInternalFrame the registerAccountJInternalFrame to set
+     */
+    public void setRegisterAccountJInternalFrame(RegisterAccountJInternalFrame registerAccountJInternalFrame) {
+        this.registerAccountJInternalFrame = registerAccountJInternalFrame;
+    }
+
+    /**
+     * @return the registerProviderJInternalFrame
+     */
+    public RegisterProviderJInternalFrame getRegisterProviderJInternalFrame() {
+        return registerProviderJInternalFrame;
+    }
+
+    /**
+     * @param registerProviderJInternalFrame the registerProviderJInternalFrame to set
+     */
+    public void setRegisterProviderJInternalFrame(RegisterProviderJInternalFrame registerProviderJInternalFrame) {
+        this.registerProviderJInternalFrame = registerProviderJInternalFrame;
+    }
+
+    /**
+     * @return the registerCategoryInternalJFrame
+     */
+    public RegisterCategoryInternalJFrame getRegisterCategoryInternalJFrame() {
+        return registerCategoryInternalJFrame;
+    }
+
+    /**
+     * @param registerCategoryInternalJFrame the registerCategoryInternalJFrame to set
+     */
+    public void setRegisterCategoryInternalJFrame(RegisterCategoryInternalJFrame registerCategoryInternalJFrame) {
+        this.registerCategoryInternalJFrame = registerCategoryInternalJFrame;
+    }
     
     MainActionListener listener = new MainActionListener(this);
 
@@ -29,6 +72,9 @@ public class MainJFrame extends javax.swing.JFrame {
     public ArrayList<Category> categoriesList = new ArrayList<Category>();
     public ArrayList<Account> accountList = new ArrayList<Account>();
     public ArrayList<Provider> providerList = new ArrayList<Provider>();
+    private RegisterAccountJInternalFrame registerAccountJInternalFrame;
+    private RegisterProviderJInternalFrame registerProviderJInternalFrame;
+    private RegisterCategoryInternalJFrame registerCategoryInternalJFrame;
     
     public MainJFrame() {
         initComponents();
@@ -90,7 +136,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGap(0, 511, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -110,7 +156,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jMenu6.setBackground(new java.awt.Color(255, 255, 255));
         jMenu6.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonMainJFrame-05-05.png"))); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonMainJFrame-05-05.png"))); // NOI18N
         jMenu6.setIconTextGap(0);
 
         jMenuItem7.setText("Usuários");
@@ -120,7 +166,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         buttonFiles.setActionCommand("buttonRegisterAccountClicked");
         buttonFiles.setBorder(null);
-        buttonFiles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonMainJFrame-04.png"))); // NOI18N
+        buttonFiles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonMainJFrame-04.png"))); // NOI18N
         buttonFiles.setIconTextGap(0);
         buttonFiles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +194,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jMenuBar1.add(buttonFiles);
 
         jMenu2.setBorder(null);
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonMainJFrame-03.png"))); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonMainJFrame-03.png"))); // NOI18N
         jMenu2.setIconTextGap(0);
 
         jMenu5.setText("Cadastro de receita");
@@ -173,7 +219,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonMainJFrame-02.png"))); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonMainJFrame-02.png"))); // NOI18N
         jMenu3.setIconTextGap(0);
 
         jMenu7.setText("Cadastro de receita");
@@ -198,7 +244,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/buttonMainJFrame-01.png"))); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonMainJFrame-01.png"))); // NOI18N
         jMenu4.setIconTextGap(0);
 
         jMenuItem10.setText("Sobre");

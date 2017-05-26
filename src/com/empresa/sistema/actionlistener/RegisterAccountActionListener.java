@@ -1,8 +1,8 @@
-package ActionListener;
+package com.empresa.sistema.actionlistener;
 
-import cointracker.entities.Account;
-import cointracker.frames.MainJFrame;
-import cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
+import com.empresa.sistema.entities.Account;
+import com.empresa.sistema.frames.MainJFrame;
+import com.empresa.sistema.internalframes.RegisterAccountJInternalFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
