@@ -8,6 +8,10 @@ package com.empresa.sistema.cointracker.frames;
 import com.empresa.sistema.cointracker.entities.User;
 import com.empresa.sistema.contracker.listener.ActionListenerLoginJFrame;
 import java.awt.Color;
+import com.empresa.sistema.cointracker.util.UserHistory;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,10 +28,20 @@ public class LoginJFrame extends javax.swing.JFrame {
     /**
      * Creates new form LoginPage
      */
-    public LoginJFrame() {
+    public LoginJFrame() throws IOException {
         initComponents();
         labelPassword.setVisible(false);
         labelUser.setVisible(false);
+        if(UserHistory.readUser() != null){
+            textUser.setText(UserHistory.readUser());
+            labelUser.setVisible(true);
+            labelPassword.setVisible(true);
+            textPassword.setText("");
+            firstclick = true;
+            textUser.setForeground(Color.DARK_GRAY);
+            textPassword.setForeground(Color.DARK_GRAY);
+        }
+        
    
     }
 
@@ -202,25 +216,30 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void textUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textUserKeyTyped
-        if(firstclick == false){
-            labelUser.setVisible(true);
-            labelPassword.setVisible(true);
-            textUser.setText("");
-            textPassword.setText("");
-            firstclick = true;
-            textUser.setForeground(Color.DARK_GRAY);
-            textPassword.setForeground(Color.DARK_GRAY);
+        if(textUser.getText().equals("Usuário")){
+            if(firstclick == false){
+                labelUser.setVisible(true);
+                labelPassword.setVisible(true);
+
+                textUser.setText("");
+                textPassword.setText("");
+                firstclick = true;
+                textUser.setForeground(Color.DARK_GRAY);
+                textPassword.setForeground(Color.DARK_GRAY);
+            }
         }
     }//GEN-LAST:event_textUserKeyTyped
 
     private void textPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textPasswordKeyTyped
-        if(firstclick == false){
-            labelUser.setVisible(true);
-            labelPassword.setVisible(true);
-            textUser.setText("");
-            textPassword.setText("");
-            firstclick = true;
-            textPassword.setForeground(Color.DARK_GRAY);
+        if(textUser.getText().equals("Usuário")){
+            if(firstclick == false){
+                labelUser.setVisible(true);
+                labelPassword.setVisible(true);
+                textUser.setText("");
+                textPassword.setText("");
+                firstclick = true;
+                textPassword.setForeground(Color.DARK_GRAY);
+            }
         }
     }//GEN-LAST:event_textPasswordKeyTyped
 
@@ -262,7 +281,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginJFrame().setVisible(true);
+                try {
+                    new LoginJFrame().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

@@ -23,15 +23,57 @@ import javax.swing.JOptionPane;
  * @author David .V
  */
 public class MainJFrame extends javax.swing.JFrame {
+
+    /**
+     * @return the categoriesList
+     */
+    public ArrayList<Category> getCategoriesList() {
+        return categoriesList;
+    }
+
+    /**
+     * @param categoriesList the categoriesList to set
+     */
+    public void setCategoriesList(ArrayList<Category> categoriesList) {
+        this.categoriesList = categoriesList;
+    }
+
+    /**
+     * @return the accountList
+     */
+    public ArrayList<Account> getAccountList() {
+        return accountList;
+    }
+
+    /**
+     * @param accountList the accountList to set
+     */
+    public void setAccountList(ArrayList<Account> accountList) {
+        this.accountList = accountList;
+    }
+
+    /**
+     * @return the providerList
+     */
+    public ArrayList<Provider> getProviderList() {
+        return providerList;
+    }
+
+    /**
+     * @param providerList the providerList to set
+     */
+    public void setProviderList(ArrayList<Provider> providerList) {
+        this.providerList = providerList;
+    }
     
     public User user;
     
     MainActionListener listener = new MainActionListener(this);
 
     /**Objetos de listas*/
-    public ArrayList<Category> categoriesList = new ArrayList<Category>();
-    public ArrayList<Account> accountList = new ArrayList<Account>();
-    public ArrayList<Provider> providerList = new ArrayList<Provider>();
+    private ArrayList<Category> categoriesList = new ArrayList<Category>();
+    private ArrayList<Account> accountList = new ArrayList<Account>();
+    private ArrayList<Provider> providerList = new ArrayList<Provider>();
     
     public MainJFrame(User user) {
         this.user = user;

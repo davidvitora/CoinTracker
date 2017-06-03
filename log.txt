@@ -3,3 +3,35 @@ Fri Jun 02 22:00:43 BRT 2017 | O usuário admin realizou o login
 Fri Jun 02 22:00:46 BRT 2017 | Aberta janela de registro de fornecedores
 Fri Jun 02 22:02:15 BRT 2017 | Tela de login aberta
 Fri Jun 02 22:02:22 BRT 2017 | O usuário admin realizou o login
+Sat Jun 03 13:17:00 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:17:06 BRT 2017 | O usuário gabriel realizou o login
+Sat Jun 03 13:18:22 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:18:27 BRT 2017 | O usuário admin realizou o login
+Sat Jun 03 13:18:45 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:18:52 BRT 2017 | O usuário david realizou o login
+Sat Jun 03 13:30:06 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:32:08 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:34:20 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:34:33 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:36:44 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:38:07 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:38:17 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:39:43 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:39:51 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:40:09 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:41:13 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:44:49 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:44:56 BRT 2017 | O usuário admin realizou o login
+Sat Jun 03 13:44:59 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:47:15 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:47:50 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:47:54 BRT 2017 | O usuário admin realizou o login
+Sat Jun 03 13:47:57 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:48:02 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Sat Jun 03 13:48:08 BRT 2017 | O usuário gabriel realizou o login
+Sat Jun 03 13:48:11 BRT 2017 | Tela de login aberta
+Sat Jun 03 13:48:16 BRT 2017 | O usuário admin realizou o login
+Sat Jun 03 13:48:19 BRT 2017 | Tela de login aberta
