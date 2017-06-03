@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.empresa.sistema.actionlistener;
-import com.empresa.sistema.internalframes.RegisterCategoryInternalJFrame;
+package com.empresa.sistema.ActionListener;
+import com.empresa.sistema.cointracker.frames.internalFrames.RegisterCategoryInternalJFrame;
+import cointracker.util.LogMaker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -22,6 +23,10 @@ public class RegisterCategoryActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if("OK".equals(e.getActionCommand())){
             frame.SaveCategory();
+            LogMaker.log("Salva a categoria \n"
+                    + "Id : " + frame.getCategory().getId() + "\n"
+                    + "Descrição : " + frame.getCategory().getDescription() + "\n"
+                    + "Tipo : " + frame.getCategory().getType() + "\n pelo usuário "+ this.frame.getUser().getName());
         }
         else if("Back".equals(e.getActionCommand())){
             frame.Back();
@@ -33,6 +38,8 @@ public class RegisterCategoryActionListener implements ActionListener {
             frame.Edit();
         }
         else if("Delete".equals(e.getActionCommand())){
+            LogMaker.log("Categoria " + this.frame.getCategory().getDescription() + "Excluida pelo usuário "
+            + this.frame.getUser());
             frame.Delete();
         }
         

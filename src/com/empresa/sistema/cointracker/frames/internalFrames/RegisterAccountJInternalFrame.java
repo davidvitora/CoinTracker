@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.empresa.sistema.internalframes;
+package com.empresa.sistema.cointracker.frames.internalFrames;
 
-import com.empresa.sistema.actionlistener.RegisterAccountActionListener;
-import com.empresa.sistema.entities.Account;
+import com.empresa.sistema.ActionListener.RegisterAccountActionListener;
+import com.empresa.sistema.cointracker.entities.Account;
+import com.empresa.sistema.cointracker.entities.User;
 import java.util.ArrayList;
 import javax.swing.event.InternalFrameListener;
 
@@ -21,9 +22,11 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     
     //Guarda o registro da conta acessada
     public int idAccount;
-    public Account account;
+    private Account account;
+    private User user;
     
-    public RegisterAccountJInternalFrame(ArrayList<Account> accountList) {
+    public RegisterAccountJInternalFrame(ArrayList<Account> accountList, User user) {
+        this.user = user;
         initComponents();
         this.listAccount = accountList;
         actionListener = new RegisterAccountActionListener(this);
@@ -35,8 +38,8 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     public void initFrameAccount(){
         idAccount = 0;
         if(listAccount.size() == 0){
-            account = new Account();
-            readAccount(account);
+            setAccount(new Account());
+            readAccount(getAccount());
             setEditMode(true);
             buttonEdit.setEnabled(false);
         }else{
@@ -45,14 +48,14 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void readAccount(Account account){
-        this.account = account;
-        labelId.setText(Integer.toString( this.account.getId()));
-        textFieldDesciption.setText(this.account.getDescription());
-        textFieldOpeningBalance.setText(Double.toString(this.account.getOpeningBalance()));
-        comboBoxAccountType.setSelectedIndex(this.account.getType());
-        textFieldOwnerName.setText(this.account.getOwnerName());
-        comboBoxOwnerType.setSelectedIndex(this.account.getOwnerType());
-        textFieldDocument.setText(this.account.getDocument());
+        this.setAccount(account);
+        labelId.setText(Integer.toString(this.getAccount().getId()));
+        textFieldDesciption.setText(this.getAccount().getDescription());
+        textFieldOpeningBalance.setText(Double.toString(this.getAccount().getOpeningBalance()));
+        comboBoxAccountType.setSelectedIndex(this.getAccount().getType());
+        textFieldOwnerName.setText(this.getAccount().getOwnerName());
+        comboBoxOwnerType.setSelectedIndex(this.getAccount().getOwnerType());
+        textFieldDocument.setText(this.getAccount().getDocument());
         if(account.getOwnerType() == 0){
             labelDocumentOwner.setText("CPF : ");            
         }else{
@@ -61,14 +64,14 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void saveChanges(){
-        account.setId(Integer.parseInt(labelId.getText()));
-        account.setDescription(textFieldDesciption.getText());
-        account.setOpeningBalance(Double.parseDouble(textFieldOpeningBalance.getText()));
-        account.setBalance(Double.parseDouble(labelActualBalance.getText()));
-        account.setType(comboBoxAccountType.getSelectedIndex());
-        account.setOwnerName(textFieldOwnerName.getText());
-        account.setDocument(textFieldDocument.getText());
-        account.setOwnerType(comboBoxOwnerType.getSelectedIndex());
+        getAccount().setId(Integer.parseInt(labelId.getText()));
+        getAccount().setDescription(textFieldDesciption.getText());
+        getAccount().setOpeningBalance(Double.parseDouble(textFieldOpeningBalance.getText()));
+        getAccount().setBalance(Double.parseDouble(labelActualBalance.getText()));
+        getAccount().setType(comboBoxAccountType.getSelectedIndex());
+        getAccount().setOwnerName(textFieldOwnerName.getText());
+        getAccount().setDocument(textFieldDocument.getText());
+        getAccount().setOwnerType(comboBoxOwnerType.getSelectedIndex());
     }
     
     public void setEditMode(boolean enable){
@@ -160,13 +163,8 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         jLabel11.setText("jLabel11");
 
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("Contas");
-        setMinimumSize(new java.awt.Dimension(400, 400));
-        setPreferredSize(new java.awt.Dimension(400, 400));
-
-        jPanel3.setMinimumSize(new java.awt.Dimension(200, 200));
-        jPanel3.setPreferredSize(new java.awt.Dimension(200, 200));
+        setPreferredSize(new java.awt.Dimension(300, 350));
 
         buttonRigth.setActionCommand("buttonRigthCliked");
         buttonRigth.addActionListener(this.actionListener);
@@ -225,7 +223,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(labelActualBalance)
@@ -311,7 +309,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                                 .addComponent(labelDocumentOwner)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 182, Short.MAX_VALUE)))
+                        .addGap(0, 82, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -379,9 +377,9 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(buttonRigth))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonOk)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonEdit, buttonLeft, buttonNew, buttonOk, buttonRigth});
@@ -390,11 +388,11 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -447,4 +445,20 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textFieldOpeningBalance;
     private javax.swing.JTextField textFieldOwnerName;
     // End of variables declaration//GEN-END:variables
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

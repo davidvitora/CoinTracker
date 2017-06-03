@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.empresa.sistema.internalframes;
+package com.empresa.sistema.cointracker.frames.internalFrames;
 
-import com.empresa.sistema.actionlistener.RegisterProviderActionListener;
-import com.empresa.sistema.entities.Provider;
+import com.empresa.sistema.ActionListener.RegisterProviderActionListener;
+import com.empresa.sistema.cointracker.entities.Provider;
+import com.empresa.sistema.cointracker.entities.User;
 import java.util.ArrayList;
 import javax.swing.event.InternalFrameListener;
 
@@ -21,9 +22,11 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     
     //Guarda o registro da conta acessada
     public int idProvider;
-    public Provider provider;
+    private Provider provider;
+    private User user;
     
-    public RegisterProviderJInternalFrame(ArrayList<Provider> listProvider) {
+    public RegisterProviderJInternalFrame(ArrayList<Provider> listProvider, User user) {
+        this.user = user;
         initComponents();
         this.listProvider = listProvider;
         actionListener = new RegisterProviderActionListener(this);
@@ -35,8 +38,8 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     public void initFrameAccount(){
         idProvider = 0;
         if(listProvider.size() == 0){
-            provider = new Provider();
-            readAccount(provider);
+            setProvider(new Provider());
+            readAccount(getProvider());
             setEditMode(true);
             buttonEdit.setEnabled(false);
         }else{
@@ -45,11 +48,11 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void readAccount(Provider provider){
-        this.provider = provider;
-        labelId.setText(Integer.toString( this.provider.getId()));
-        textFieldName.setText(this.provider.getName());
-        comboBoxType.setSelectedIndex(this.provider.getType());
-        textFieldDocument.setText(this.provider.getDocument());
+        this.setProvider(provider);
+        labelId.setText(Integer.toString(this.getProvider().getId()));
+        textFieldName.setText(this.getProvider().getName());
+        comboBoxType.setSelectedIndex(this.getProvider().getType());
+        textFieldDocument.setText(this.getProvider().getDocument());
         if(provider.getType() == 0){
             labelDocumentOwner.setText("CPF : ");            
         }else{
@@ -66,17 +69,17 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void saveChanges(){
-        provider.setId(Integer.parseInt(labelId.getText()));
-        provider.setName(textFieldName.getText());
-        provider.setType(comboBoxType.getSelectedIndex());
-        provider.setDocument(textFieldDocument.getText());
-        provider.setActivated(checkBoxActive.isSelected());
-        provider.setCountry(comboBoxCountry.getSelectedIndex());
-        provider.setState(textFieldState.getText());
-        provider.setCity(textFieldCity.getText());
-        provider.setDistrict(textFieldDistrict.getText());
-        provider.setStreet(textFieldStreet.getText());
-        provider.setNumber(textFieldNumber.getText());
+        getProvider().setId(Integer.parseInt(labelId.getText()));
+        getProvider().setName(textFieldName.getText());
+        getProvider().setType(comboBoxType.getSelectedIndex());
+        getProvider().setDocument(textFieldDocument.getText());
+        getProvider().setActivated(checkBoxActive.isSelected());
+        getProvider().setCountry(comboBoxCountry.getSelectedIndex());
+        getProvider().setState(textFieldState.getText());
+        getProvider().setCity(textFieldCity.getText());
+        getProvider().setDistrict(textFieldDistrict.getText());
+        getProvider().setStreet(textFieldStreet.getText());
+        getProvider().setNumber(textFieldNumber.getText());
         System.out.println("------------------------------");
         System.out.println("Saved provider:");
         System.out.println(Integer.parseInt(labelId.getText()));
@@ -196,13 +199,8 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
         jLabel11.setText("jLabel11");
 
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("Fornecedores");
-        setAutoscrolls(true);
-        setMinimumSize(new java.awt.Dimension(400, 400));
-        setPreferredSize(new java.awt.Dimension(400, 400));
-
-        jPanel3.setPreferredSize(new java.awt.Dimension(400, 400));
+        setPreferredSize(new java.awt.Dimension(300, 350));
 
         buttonRigth.setActionCommand("buttonRigthCliked");
         buttonRigth.addActionListener(this.actionListener);
@@ -401,17 +399,16 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                         .addComponent(labelId)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(buttonEdit)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonNew)
-                                .addGap(18, 18, 18)
-                                .addComponent(buttonLeft)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonRigth)
-                                .addGap(0, 134, Short.MAX_VALUE))
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(buttonEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonNew)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonLeft)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonRigth)
+                        .addContainerGap(34, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -434,9 +431,9 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(labelId))
                 .addGap(12, 12, 12)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonOk)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonEdit, buttonLeft, buttonNew, buttonOk, buttonRigth});
@@ -445,11 +442,13 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -508,4 +507,20 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTextField textFieldState;
     private javax.swing.JTextField textFieldStreet;
     // End of variables declaration//GEN-END:variables
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

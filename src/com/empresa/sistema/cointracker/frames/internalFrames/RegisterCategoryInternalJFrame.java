@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.empresa.sistema.internalframes;
+package com.empresa.sistema.cointracker.frames.internalFrames;
 
-import com.empresa.sistema.entities.Category;
+import com.empresa.sistema.cointracker.entities.Category;
 import java.util.ArrayList;
-import com.empresa.sistema.actionlistener.RegisterCategoryActionListener;
+import com.empresa.sistema.ActionListener.RegisterCategoryActionListener;
+import com.empresa.sistema.cointracker.entities.User;
 
 /**
  *
@@ -17,11 +18,13 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     
     RegisterCategoryActionListener actionListener;
     ArrayList<Category> categories;
-    Category category;
+    private Category category;
     int currentID;
     boolean editing = false;
+    private User user;
     
-    public RegisterCategoryInternalJFrame(ArrayList<Category> categories) {
+    public RegisterCategoryInternalJFrame(ArrayList<Category> categories, User user) {
+        this.user = user;
         initComponents();
         category = new Category();
         this.categories = categories;
@@ -32,11 +35,11 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     }
     
     public void SaveCategory(){
-        category.setDescription(inputDescription.getText());
-        category.setType(comboType.getSelectedItem().toString());
+        getCategory().setDescription(inputDescription.getText());
+        getCategory().setType(comboType.getSelectedItem().toString());
         if(!editing){
-          category.setId(categories.size());
-          categories.add(category); 
+            getCategory().setId(categories.size());
+          categories.add(getCategory()); 
         }
         Reset();
         currentID = categories.size();
@@ -44,21 +47,21 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
         SetAvailability(true);
         System.out.println("-------------------------------------------------");
         System.out.println("Saved Category["+categories.size()+"]:");
-        System.out.println("ID:" + category.getId());
-        System.out.println("Description:" + category.getDescription());
-        System.out.println("Type:" + category.getType());
+        System.out.println("ID:" + getCategory().getId());
+        System.out.println("Description:" + getCategory().getDescription());
+        System.out.println("Type:" + getCategory().getType());
         System.out.println("-------------------------------------------------");
     }
     
     public void Reset(){
-        category = new Category();
+        setCategory(new Category());
         inputDescription.setText("");
         comboType.setSelectedItem("Despesa");
     }
     
     public void Delete(){
-        category = categories.get(currentID);
-        categories.remove(category);
+        setCategory(categories.get(currentID));
+        categories.remove(getCategory());
     }
     
     public void AddActionListeners(){
@@ -86,36 +89,36 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     
     public void Back(){
         if(currentID > 0){
-            category = categories.get(currentID - 1);
-            inputDescription.setText(category.getDescription());
-            comboType.setSelectedItem(category.getType());
+            setCategory(categories.get(currentID - 1));
+            inputDescription.setText(getCategory().getDescription());
+            comboType.setSelectedItem(getCategory().getType());
             currentID -= 1;
             SetAvailability(false);
             System.out.println("-------------------------------------------------");
-            System.out.println("Current Category: " + category.getId());
-            System.out.println("Description:" + category.getDescription());
-            System.out.println("Type:" + category.getType());
+            System.out.println("Current Category: " + getCategory().getId());
+            System.out.println("Description:" + getCategory().getDescription());
+            System.out.println("Type:" + getCategory().getType());
             System.out.println("-------------------------------------------------");
         }
     }
     public void Forward(){
         if(currentID < categories.size() - 1){
-            category = categories.get(currentID + 1);
-            inputDescription.setText(category.getDescription());
-            comboType.setSelectedItem(category.getType());
+            setCategory(categories.get(currentID + 1));
+            inputDescription.setText(getCategory().getDescription());
+            comboType.setSelectedItem(getCategory().getType());
             currentID += 1;
             SetAvailability(false);
             System.out.println("-------------------------------------------------");
-            System.out.println("Current Category: " + category.getId());
-            System.out.println("Description:" + category.getDescription());
-            System.out.println("Type:" + category.getType());
+            System.out.println("Current Category: " + getCategory().getId());
+            System.out.println("Description:" + getCategory().getDescription());
+            System.out.println("Type:" + getCategory().getType());
             System.out.println("-------------------------------------------------");
         }
     }
     
     public void Edit(){
         SetAvailability(true);
-        category = categories.get(currentID);
+        setCategory(categories.get(currentID));
         editing = true;
     }
 
@@ -141,8 +144,6 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
         buttonDelete = new javax.swing.JButton();
 
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 400));
 
         buttonEdit.setActionCommand("Edit");
         buttonEdit.setText("Editar");
@@ -196,7 +197,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
                                 .addComponent(buttonFoward)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 163, Short.MAX_VALUE)
+                        .addGap(0, 65, Short.MAX_VALUE)
                         .addComponent(buttonDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonEdit)
@@ -223,7 +224,7 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboType, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonOK)
                     .addComponent(buttonEdit)
@@ -248,4 +249,20 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.empresa.sistema.frames;
+package com.empresa.sistema.cointracker.frames;
 
-import com.empresa.sistema.listener.ActionListenerLoginJFrame;
+import com.empresa.sistema.cointracker.entities.User;
+import com.empresa.sistema.contracker.listener.ActionListenerLoginJFrame;
 import java.awt.Color;
 
 /**
@@ -16,7 +17,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     //Indica se o usuário já clicou em um dos campos da tela de login
     boolean firstclick = false;
-    
+    public User user = new User();
     //
     ActionListenerLoginJFrame listener = new ActionListenerLoginJFrame(this);
     
@@ -61,7 +62,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         buttonLogin.setBackground(new java.awt.Color(109, 138, 181));
         buttonLogin.setForeground(new java.awt.Color(109, 138, 181));
-        buttonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/buttonLogin.jpg"))); // NOI18N
+        buttonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/Icones/buttonLogin.jpg"))); // NOI18N
         buttonLogin.setToolTipText("");
         buttonLogin.setFocusCycleRoot(true);
         buttonLogin.setOpaque(false);
@@ -109,9 +110,8 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(216, 214, 214));
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/icones/cointrackerlogo-01.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/empresa/sistema/Icones/cointrackerlogo-01.png"))); // NOI18N
 
         labelUser.setForeground(java.awt.Color.gray);
         labelUser.setText("Usuário");
