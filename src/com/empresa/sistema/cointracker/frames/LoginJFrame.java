@@ -6,7 +6,7 @@
 package com.empresa.sistema.cointracker.frames;
 
 import com.empresa.sistema.cointracker.entities.User;
-import com.empresa.sistema.contracker.listener.ActionListenerLoginJFrame;
+import com.empresa.sistema.ActionListener.ActionListenerLoginJFrame;
 import java.awt.Color;
 import com.empresa.sistema.cointracker.util.UserHistory;
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     //Indica se o usuário já clicou em um dos campos da tela de login
     boolean firstclick = false;
-    public User user = new User();
+    public User user;
     //
     ActionListenerLoginJFrame listener = new ActionListenerLoginJFrame(this);
     
@@ -30,6 +30,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() throws IOException {
         initComponents();
+        this.buttonLogin.addActionListener(listener);
         labelPassword.setVisible(false);
         labelUser.setVisible(false);
         if(UserHistory.readUser() != null){
@@ -178,7 +179,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonLogin.addActionListener(listener);
+        this.buttonLogin.addActionListener(listener);
         textPassword.addActionListener(listener);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

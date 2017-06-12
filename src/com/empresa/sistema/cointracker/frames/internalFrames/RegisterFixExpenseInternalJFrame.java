@@ -5,6 +5,7 @@
  */
 package com.empresa.sistema.cointracker.frames.internalFrames;
 
+import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
 
 /**
@@ -16,10 +17,10 @@ public class RegisterFixExpenseInternalJFrame extends javax.swing.JInternalFrame
     /**
      * Creates new form RegisterFixExpense
      */
-    public User user;
+    public Session session;
     
-    public RegisterFixExpenseInternalJFrame(User user) {
-        this.user = user;
+    public RegisterFixExpenseInternalJFrame(Session session) {
+        this.session = session;
         initComponents();
     }
 

@@ -13,6 +13,7 @@ import com.empresa.sistema.cointracker.frames.internalFrames.RegisterCategoryInt
 import com.empresa.sistema.cointracker.frames.internalFrames.RegisterAccountJInternalFrame;
 import com.empresa.sistema.cointracker.entities.Category;
 import com.empresa.sistema.cointracker.entities.Provider;
+import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -66,7 +67,7 @@ public class MainJFrame extends javax.swing.JFrame {
         this.providerList = providerList;
     }
     
-    public User user;
+    private Session session;
     
     MainActionListener listener = new MainActionListener(this);
 
@@ -75,8 +76,8 @@ public class MainJFrame extends javax.swing.JFrame {
     private ArrayList<Account> accountList = new ArrayList<Account>();
     private ArrayList<Provider> providerList = new ArrayList<Provider>();
     
-    public MainJFrame(User user) {
-        this.user = user;
+    public MainJFrame(Session session) {
+        this.session = session;
         initComponents();
         buttonRegisterAccount.addActionListener(listener);
         buttonRegisterProvider.addActionListener(listener);
@@ -283,13 +284,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        RegisterFixExpenseInternalJFrame fixExpense = new RegisterFixExpenseInternalJFrame(user);
+        RegisterFixExpenseInternalJFrame fixExpense = new RegisterFixExpenseInternalJFrame(getSession());
         desktopPane.add(fixExpense);
         fixExpense.setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        RegisterVariableExpense variableExpense = new RegisterVariableExpense(user);
+        RegisterVariableExpense variableExpense = new RegisterVariableExpense(getSession());
         desktopPane.add(variableExpense);
         variableExpense.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -360,4 +361,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
 }

@@ -120,7 +120,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLoginActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="buttonLogin.addActionListener(listener);"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="this.buttonLogin.addActionListener(listener);"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>

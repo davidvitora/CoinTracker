@@ -27,18 +27,18 @@ public class MainActionListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if("buttonRegisterAccountClicked".equals(e.getActionCommand())){
-            RegisterAccountJInternalFrame registerAccountJInternalFrame = new RegisterAccountJInternalFrame(frame.getAccountList(), frame.user);
+            RegisterAccountJInternalFrame registerAccountJInternalFrame = new RegisterAccountJInternalFrame(frame.getAccountList(), frame.getSession());
             frame.desktopPane.add(registerAccountJInternalFrame);
             registerAccountJInternalFrame.setVisible(true);
             LogMaker.log("Aberta janela de registro de contas");
         }else if("buttonRegisterProviderClicked".equals(e.getActionCommand())){
-            RegisterProviderJInternalFrame registerProviderJInternalFrame = new RegisterProviderJInternalFrame(frame.getProviderList(), frame.user);
+            RegisterProviderJInternalFrame registerProviderJInternalFrame = new RegisterProviderJInternalFrame(frame.getProviderList(), frame.getSession());
             frame.desktopPane.add(registerProviderJInternalFrame);
             registerProviderJInternalFrame.setVisible(true);
             LogMaker.log("Aberta janela de registro de fornecedores");
         }
         else if("AddCategory".equals(e.getActionCommand())){
-            RegisterCategoryInternalJFrame registerCategoryInternalJFrame = new RegisterCategoryInternalJFrame(frame.getCategoriesList(), frame.user);
+            RegisterCategoryInternalJFrame registerCategoryInternalJFrame = new RegisterCategoryInternalJFrame(frame.getCategoriesList(), frame.getSession());
             frame.desktopPane.add(registerCategoryInternalJFrame);
             registerCategoryInternalJFrame.setVisible(true);
             LogMaker.log("Aberta janela de registro de categorias");

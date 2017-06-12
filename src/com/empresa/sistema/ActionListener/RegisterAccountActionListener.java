@@ -49,7 +49,7 @@ public class RegisterAccountActionListener implements ActionListener {
             + "\n Tipo de conta: " + tipoConta
             + "\n Nome do responsavel: " + frame.getAccount().getOwnerName()
             + "\n Tipo de pessoa responsavel: " + tipoDono
-            + "\n CNPJ do responsavel: " + frame.getAccount() + "\n pelo usuário : " + this.frame.getUser().getName());
+            + "\n CNPJ do responsavel: " + frame.getAccount() + "\n pelo usuário : " + this.frame.getSession().getUser().getName());
             
         }else if("buttonEditCliked".equals(e.getActionCommand())){
             if(frame.buttonEdit.getText().equals("Editar")){

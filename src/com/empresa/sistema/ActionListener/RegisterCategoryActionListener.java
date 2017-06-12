@@ -26,7 +26,7 @@ public class RegisterCategoryActionListener implements ActionListener {
             LogMaker.log("Salva a categoria \n"
                     + "Id : " + frame.getCategory().getId() + "\n"
                     + "Descrição : " + frame.getCategory().getDescription() + "\n"
-                    + "Tipo : " + frame.getCategory().getType() + "\n pelo usuário "+ this.frame.getUser().getName());
+                    + "Tipo : " + frame.getCategory().getType() + "\n pelo usuário "+ this.frame.getsession().getUser().getName());
         }
         else if("Back".equals(e.getActionCommand())){
             frame.Back();
@@ -39,7 +39,7 @@ public class RegisterCategoryActionListener implements ActionListener {
         }
         else if("Delete".equals(e.getActionCommand())){
             LogMaker.log("Categoria " + this.frame.getCategory().getDescription() + "Excluida pelo usuário "
-            + this.frame.getUser());
+            + this.frame.getsession().getUser());
             frame.Delete();
         }
         

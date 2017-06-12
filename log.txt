@@ -35,3 +35,77 @@ Sat Jun 03 13:48:08 BRT 2017 | O usuário gabriel realizou o login
 Sat Jun 03 13:48:11 BRT 2017 | Tela de login aberta
 Sat Jun 03 13:48:16 BRT 2017 | O usuário admin realizou o login
 Sat Jun 03 13:48:19 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:38:16 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:38:20 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:25 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:39:47 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:40:17 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:40:17 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:40:38 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:40:39 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:39 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:09 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:18 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:41:18 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:04 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:43:21 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:43:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:43:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
+Mon Jun 12 01:43:44 BRT 2017 | Tela de login aberta
+Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:47 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:47 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Mon Jun 12 01:43:57 BRT 2017 | null
+Mon Jun 12 01:43:58 BRT 2017 | null
+Mon Jun 12 01:44:01 BRT 2017 | Aberta janela de registro de categorias
+Mon Jun 12 01:44:05 BRT 2017 | Aberta janela de registro de contas

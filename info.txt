@@ -1,0 +1,5 @@
+Setting Name: Exemplo 1 - ConnBanco
+Diver: org.hsqldb.jdbcDriver
+URL: jdbc:hsqldb:hsql://localhost/cointrackerdb
+User: SA
+Password: [VAZIO]

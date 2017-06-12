@@ -8,6 +8,7 @@ package com.empresa.sistema.cointracker.frames.internalFrames;
 import com.empresa.sistema.cointracker.entities.Category;
 import java.util.ArrayList;
 import com.empresa.sistema.ActionListener.RegisterCategoryActionListener;
+import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
 
 /**
@@ -21,10 +22,10 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
     private Category category;
     int currentID;
     boolean editing = false;
-    private User user;
+    private Session session;
     
-    public RegisterCategoryInternalJFrame(ArrayList<Category> categories, User user) {
-        this.user = user;
+    public RegisterCategoryInternalJFrame(ArrayList<Category> categories, Session session) {
+        this.session = session;
         initComponents();
         category = new Category();
         this.categories = categories;
@@ -258,11 +259,11 @@ public class RegisterCategoryInternalJFrame extends javax.swing.JInternalFrame {
         this.category = category;
     }
 
-    public User getUser() {
-        return user;
+    public Session getsession() {
+        return session;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSession(Session session) {
+        this.session = session;
     }
 }

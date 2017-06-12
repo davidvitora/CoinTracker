@@ -7,6 +7,7 @@ package com.empresa.sistema.cointracker.frames.internalFrames;
 
 import com.empresa.sistema.ActionListener.RegisterAccountActionListener;
 import com.empresa.sistema.cointracker.entities.Account;
+import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
 import java.util.ArrayList;
 import javax.swing.event.InternalFrameListener;
@@ -23,10 +24,10 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     //Guarda o registro da conta acessada
     public int idAccount;
     private Account account;
-    private User user;
+    private Session session;
     
-    public RegisterAccountJInternalFrame(ArrayList<Account> accountList, User user) {
-        this.user = user;
+    public RegisterAccountJInternalFrame(ArrayList<Account> accountList, Session session) {
+        this.session = session;
         initComponents();
         this.listAccount = accountList;
         actionListener = new RegisterAccountActionListener(this);
@@ -454,11 +455,11 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         this.account = account;
     }
 
-    public User getUser() {
-        return user;
+    public Session getSession() {
+        return session;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSession(Session session) {
+        this.session = session;
     }
 }
