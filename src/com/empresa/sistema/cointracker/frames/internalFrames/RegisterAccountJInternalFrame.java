@@ -5,11 +5,17 @@
  */
 package com.empresa.sistema.cointracker.frames.internalFrames;
 
+import cointracker.util.LogMaker;
 import com.empresa.sistema.ActionListener.RegisterAccountActionListener;
 import com.empresa.sistema.cointracker.entities.Account;
 import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
+import com.empresa.sistema.database.AccountDAO;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.event.InternalFrameListener;
 
 /**
@@ -18,18 +24,23 @@ import javax.swing.event.InternalFrameListener;
  */
 public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
+    private AccountDAO dao;
     RegisterAccountActionListener actionListener;
-    public ArrayList<Account> listAccount;
+    //Lista de ids de contas retiradas do banco de dados
+    private List<Integer> accountIdsList;
     
     //Guarda o registro da conta acessada
-    public int idAccount;
+    public int indexAccount;
     private Account account;
+    
+    //Registro de sessão
     private Session session;
     
-    public RegisterAccountJInternalFrame(ArrayList<Account> accountList, Session session) {
+    public RegisterAccountJInternalFrame(Session session) throws Exception {
         this.session = session;
         initComponents();
-        this.listAccount = accountList;
+        this.dao = new AccountDAO();
+        this.accountIdsList = dao.getAccountsId();
         actionListener = new RegisterAccountActionListener(this);
         addActionListeners();
         setEditMode(false);
@@ -37,14 +48,21 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void initFrameAccount(){
-        idAccount = 0;
-        if(listAccount.size() == 0){
-            setAccount(new Account());
-            readAccount(getAccount());
-            setEditMode(true);
-            buttonEdit.setEnabled(false);
-        }else{
-            readAccount(listAccount.get(idAccount));
+        try{
+            indexAccount = 0;
+            if(getAccountIdsList().size() == 0){
+                this.setAccount(new Account());
+                this.getAccount().setId(this.verifyOpenId());
+                this.readAccount(this.getAccount());
+                setEditMode(true);
+                buttonEdit.setEnabled(false);
+            }else{
+                setAccount(getDao().getAccount(indexAccount));
+                readAccount(getAccount());
+            }
+        }catch(Exception ex){
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage() + "Erro + 1");
         }
     }
     
@@ -65,14 +83,46 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     }
     
     public void saveChanges(){
-        getAccount().setId(Integer.parseInt(labelId.getText()));
-        getAccount().setDescription(textFieldDesciption.getText());
-        getAccount().setOpeningBalance(Double.parseDouble(textFieldOpeningBalance.getText()));
-        getAccount().setBalance(Double.parseDouble(labelActualBalance.getText()));
-        getAccount().setType(comboBoxAccountType.getSelectedIndex());
-        getAccount().setOwnerName(textFieldOwnerName.getText());
-        getAccount().setDocument(textFieldDocument.getText());
-        getAccount().setOwnerType(comboBoxOwnerType.getSelectedIndex());
+        try {
+            getAccount().setId(Integer.parseInt(labelId.getText()));
+            getAccount().setDescription(textFieldDesciption.getText());
+            getAccount().setOpeningBalance(Double.parseDouble(textFieldOpeningBalance.getText()));
+            getAccount().setBalance(Double.parseDouble(labelActualBalance.getText()));
+            getAccount().setType(comboBoxAccountType.getSelectedIndex());
+            getAccount().setOwnerName(textFieldOwnerName.getText());
+            getAccount().setDocument(textFieldDocument.getText());
+            getAccount().setOwnerType(comboBoxOwnerType.getSelectedIndex());
+            if(this.getAccountIdsList().contains(this.getAccount().getId())){
+                getDao().updateAccount(this.getAccount());
+            }else{
+                getDao().saveAccount(this.getAccount());
+            }
+        } catch (Exception ex) {
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage() + "Erro");
+        }
+        
+        
+    }
+    
+    public int verifyOpenId(){
+        int id = 0;
+        for(Integer listId : this.getAccountIdsList()){
+            if(id != listId){
+                return id;
+            }else{
+                id++;
+            }
+        }
+        return id;
+    }
+    
+    public void updateAccountsIds(){
+        try {
+            this.accountIdsList = dao.getAccountsId();
+        } catch (Exception ex) {
+            Logger.getLogger(RegisterAccountJInternalFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void setEditMode(boolean enable){
@@ -461,5 +511,21 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    public List<Integer> getAccountIdsList() {
+        return accountIdsList;
+    }
+
+    public void setAccountIdsList(List<Integer> accountIdsList) {
+        this.accountIdsList = accountIdsList;
+    }
+
+    public AccountDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(AccountDAO dao) {
+        this.dao = dao;
     }
 }

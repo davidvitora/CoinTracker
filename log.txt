@@ -1,111 +1,444 @@
-Fri Jun 02 22:00:40 BRT 2017 | Tela de login aberta
-Fri Jun 02 22:00:43 BRT 2017 | O usuário admin realizou o login
-Fri Jun 02 22:00:46 BRT 2017 | Aberta janela de registro de fornecedores
-Fri Jun 02 22:02:15 BRT 2017 | Tela de login aberta
-Fri Jun 02 22:02:22 BRT 2017 | O usuário admin realizou o login
-Sat Jun 03 13:17:00 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:17:06 BRT 2017 | O usuário gabriel realizou o login
-Sat Jun 03 13:18:22 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:18:27 BRT 2017 | O usuário admin realizou o login
-Sat Jun 03 13:18:45 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:18:52 BRT 2017 | O usuário david realizou o login
-Sat Jun 03 13:30:06 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:32:08 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:34:20 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:34:33 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:36:44 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:38:07 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:38:17 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:39:43 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:39:51 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:40:09 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:41:13 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:44:49 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:44:56 BRT 2017 | O usuário admin realizou o login
-Sat Jun 03 13:44:59 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:47:15 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:47:50 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:47:54 BRT 2017 | O usuário admin realizou o login
-Sat Jun 03 13:47:57 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:48:02 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Sat Jun 03 13:48:03 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Sat Jun 03 13:48:08 BRT 2017 | O usuário gabriel realizou o login
-Sat Jun 03 13:48:11 BRT 2017 | Tela de login aberta
-Sat Jun 03 13:48:16 BRT 2017 | O usuário admin realizou o login
-Sat Jun 03 13:48:19 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:38:16 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:38:20 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:25 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:38:36 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:39:47 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:40:17 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:40:17 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:40:38 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:40:39 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:39 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:41 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:40:42 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:09 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:15 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:17 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:18 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:41:18 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:04 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:42:05 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:43:21 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:43:26 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:43:27 BRT 2017 | S1000 General error java.lang.RuntimeException: database alias does not exist
-Mon Jun 12 01:43:44 BRT 2017 | Tela de login aberta
-Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:45 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:47 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:47 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
-Mon Jun 12 01:43:57 BRT 2017 | null
-Mon Jun 12 01:43:58 BRT 2017 | null
-Mon Jun 12 01:44:01 BRT 2017 | Aberta janela de registro de categorias
-Mon Jun 12 01:44:05 BRT 2017 | Aberta janela de registro de contas
+﻿Thu Jun 15 17:36:27 BRT 2017 | Tela de login aberta
+Thu Jun 15 17:36:31 BRT 2017 | O usuário admin realizou o login
+Thu Jun 15 17:36:32 BRT 2017 | Aberta janela de registro de contas
+Thu Jun 15 17:36:46 BRT 2017 | Unexpected token:  in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername)]
+Thu Jun 15 17:36:54 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dadwa
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: dawd
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@115b8050
+ pelo usuário : admin
+Fri Jun 23 19:22:42 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:22:50 BRT 2017 | socket creation error
+Fri Jun 23 19:22:50 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Fri Jun 23 19:23:52 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:23:56 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:26:16 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:26:20 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:26:41 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:27:02 BRT 2017 | Unexpected token:  in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername)]
+Fri Jun 23 19:27:28 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dawdda
+ Saldo Atual: 0.0
+ Saldo Inicial: 10.0
+ Tipo de conta: 1 - Compartilhada
+ Nome do responsavel: dawdda
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@5ab6fff5
+ pelo usuário : admin
+Fri Jun 23 19:27:41 BRT 2017 | Criando nova conta
+Fri Jun 23 19:27:44 BRT 2017 | Criando nova conta
+Fri Jun 23 19:27:44 BRT 2017 | Criando nova conta
+Fri Jun 23 19:27:44 BRT 2017 | Criando nova conta
+Fri Jun 23 19:27:45 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 19:27:52 BRT 2017 | Unexpected token:  in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername)]
+Fri Jun 23 19:28:12 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dawdda
+ Saldo Atual: 0.0
+ Saldo Inicial: 10.0
+ Tipo de conta: 1 - Compartilhada
+ Nome do responsavel: dawdda
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@5ab6fff5
+ pelo usuário : admin
+Fri Jun 23 19:30:12 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:30:16 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:30:19 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:30:22 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@7c9dd9e6[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[aaa], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 19:30:22 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: aaa
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@1d16dbe
+ pelo usuário : admin
+Fri Jun 23 19:30:31 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:30:39 BRT 2017 | For input string: "sdawd"
+Fri Jun 23 19:30:42 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: sdawdad
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@19171838
+ pelo usuário : admin
+Fri Jun 23 19:30:48 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:30:53 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@249222f2[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[dawddadsdaw], [sdad], [0.0], [0.0], [0], [0], [sdawd]]]
+Fri Jun 23 19:30:53 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dawddadsdaw
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: sdawd
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@23babf7f
+ pelo usuário : admin
+Fri Jun 23 19:31:34 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:31:37 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:31:39 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:31:41 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@4cb457dc[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[adawda], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 19:31:41 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: adawda
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@11699437
+ pelo usuário : admin
+Fri Jun 23 19:31:56 BRT 2017 | null
+Fri Jun 23 19:31:58 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:01 BRT 2017 | null
+Fri Jun 23 19:32:02 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:06 BRT 2017 | null
+Fri Jun 23 19:32:07 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:10 BRT 2017 | null
+Fri Jun 23 19:32:11 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:16 BRT 2017 | null
+Fri Jun 23 19:32:17 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:19 BRT 2017 | null
+Fri Jun 23 19:32:22 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:32:34 BRT 2017 | null
+Fri Jun 23 19:32:35 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:35:34 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:35:37 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:35:38 BRT 2017 | null
+Fri Jun 23 19:35:40 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:37:30 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:37:33 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:40:23 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:40:42 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:40:47 BRT 2017 | null
+Fri Jun 23 19:40:48 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:40:58 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:41:01 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:41:02 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:41:08 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:41:10 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 19:41:11 BRT 2017 | Cancelada edição de conta 
+Fri Jun 23 19:41:19 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 19:41:22 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@ec9fae6[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[adawdaaaaaa], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 19:41:22 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: adawdaaaaaa
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@50365bd8
+ pelo usuário : admin
+Fri Jun 23 19:46:31 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:46:54 BRT 2017 | Tela de login aberta
+Fri Jun 23 19:46:57 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 19:46:58 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 19:47:01 BRT 2017 | Criando nova conta
+Fri Jun 23 19:47:02 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 19:47:06 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@30bff4[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[tres], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 19:47:06 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: tres
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@2c488d40
+ pelo usuário : admin
+Fri Jun 23 19:47:09 BRT 2017 | Criando nova conta
+Fri Jun 23 19:47:11 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 19:47:15 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@3531522e[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[quatro], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 19:47:15 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: quatro
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@2c488d40
+ pelo usuário : admin
+Fri Jun 23 20:01:16 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:01:20 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:01:22 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:02:21 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:02:24 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:02:25 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:03:05 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:04:23 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:04:43 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:04:48 BRT 2017 | null
+Fri Jun 23 20:04:58 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:05:00 BRT 2017 | null
+Fri Jun 23 20:07:27 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:07:32 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:07:33 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:08:47 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:08:50 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:08:52 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:11:23 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:11:26 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:11:28 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:11:34 BRT 2017 | Criando nova conta
+Fri Jun 23 20:18:15 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:18:18 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:18:19 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:18:25 BRT 2017 | Criando nova conta
+Fri Jun 23 20:18:56 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:19:00 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:19:02 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:19:31 BRT 2017 | Criando nova conta
+Fri Jun 23 20:19:34 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:35 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:35 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:35 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:35 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:35 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:37 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:37 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:37 BRT 2017 | Desfeita a edição de conta
+Fri Jun 23 20:19:50 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@2dcce9f4[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[Teste], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 20:19:50 BRT 2017 | Registro de cadastro de conta salvo
+ id: 4
+ Descrição: Teste
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@7678d881
+ pelo usuário : admin
+Fri Jun 23 20:27:29 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:27:32 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:27:34 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:27:38 BRT 2017 | Criando nova conta
+Fri Jun 23 20:27:49 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@2bfa16f4[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[seis], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 20:27:49 BRT 2017 | Attempt to insert null into a non-nullable column: column: ID table: ACCOUNT in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)]
+Fri Jun 23 20:28:03 BRT 2017 | Registro de cadastro de conta salvo
+ id: 5
+ Descrição: seis
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@4d607198
+ pelo usuário : admin
+Fri Jun 23 20:28:56 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:28:59 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@294e8af0[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)], parameters=[[dadwdwd], [], [0.0], [0.0], [0], [0], []]]
+Fri Jun 23 20:28:59 BRT 2017 | Attempt to insert null into a non-nullable column: column: ID table: ACCOUNT in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername)values (?,?,?,?,?,?,?)]
+Fri Jun 23 20:29:04 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dadwdwd
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@6939c37
+ pelo usuário : admin
+Fri Jun 23 20:30:09 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:30:12 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:31:45 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:31:48 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:31:50 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:31:59 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@44979add[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[primeiro], [], [0.0], [0.0], [0], [0], [], [0]]]
+Fri Jun 23 20:31:59 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeiro
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@53f05
+ pelo usuário : admin
+Fri Jun 23 20:32:03 BRT 2017 | Criando nova conta
+Fri Jun 23 20:32:11 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@47a13655[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[Segundo], [], [0.0], [0.0], [0], [0], [], [1]]]
+Fri Jun 23 20:32:11 BRT 2017 | Registro de cadastro de conta salvo
+ id: 1
+ Descrição: Segundo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@4aabdea5
+ pelo usuário : admin
+Fri Jun 23 20:32:24 BRT 2017 | Criando nova conta
+Fri Jun 23 20:32:32 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@64a1a09f[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[Terceiro], [], [0.0], [0.0], [0], [0], [], [2]]]
+Fri Jun 23 20:32:32 BRT 2017 | Registro de cadastro de conta salvo
+ id: 2
+ Descrição: Terceiro
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@7cbd323b
+ pelo usuário : admin
+Fri Jun 23 20:33:52 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:33:55 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:33:56 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:34:03 BRT 2017 | Criando nova conta
+Fri Jun 23 20:34:10 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@73fbad0e[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[Teste], [], [0.0], [0.0], [0], [0], [], [3]]]
+Fri Jun 23 20:34:10 BRT 2017 | Registro de cadastro de conta salvo
+ id: 3
+ Descrição: Teste
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@3e9b4093
+ pelo usuário : admin
+Fri Jun 23 20:34:39 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:34:43 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:34:44 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:34:48 BRT 2017 | Criando nova conta
+Fri Jun 23 20:34:51 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@1f1d6cd1[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[quinto], [], [0.0], [0.0], [0], [0], [], [4]]]
+Fri Jun 23 20:34:51 BRT 2017 | Registro de cadastro de conta salvo
+ id: 4
+ Descrição: quinto
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@4bb97b7f
+ pelo usuário : admin
+Fri Jun 23 20:35:04 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:35:14 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@7101a7e3[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[quarto], [], [0.0], [0.0], [0], [0], [], [3]]]
+Fri Jun 23 20:35:14 BRT 2017 | Violation of unique constraint $$: duplicate value(s) for column(s) $$: SYS_PK_49 in statement [insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)]
+Fri Jun 23 20:35:18 BRT 2017 | Registro de cadastro de conta salvo
+ id: 3
+ Descrição: quarto
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@573b5dd0
+ pelo usuário : admin
+Fri Jun 23 20:42:45 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:47:32 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:47:35 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:47:37 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:47:48 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:47:51 BRT 2017 | Unexpected token (, requires SET in statement [update account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?) where id = ?]
+Fri Jun 23 20:47:54 BRT 2017 | Registro de cadastro de conta salvo
+ id: 1
+ Descrição: Segundooo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@5df54433
+ pelo usuário : admin
+Fri Jun 23 20:48:17 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:48:21 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:48:24 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:48:25 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:48:27 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:48:29 BRT 2017 | Unexpected token: ( in statement [update account set (description,document,openingbalance,balance,ownertype,type,ownername,id) values (?,?,?,?,?,?,?,?) where id = ?]
+Fri Jun 23 20:48:33 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeiroo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@3e4c2b40
+ pelo usuário : admin
+Fri Jun 23 20:48:43 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:48:46 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:48:48 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:48:50 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:48:51 BRT 2017 | Unexpected token: ( in statement [update account set (description,document,openingbalance,balance,ownertype,type,ownername,id) = (?,?,?,?,?,?,?,?) where id = ?]
+Fri Jun 23 20:49:01 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeiroo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@494f176c
+ pelo usuário : admin
+Fri Jun 23 20:49:57 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:50:00 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:50:01 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:50:02 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:50:04 BRT 2017 | Unexpected token: ) in statement [update account set description = ?, document = ?, openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ?) where id = ?]
+Fri Jun 23 20:50:08 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeirooo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@1f2f1a22
+ pelo usuário : admin
+Fri Jun 23 20:50:16 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:50:18 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:50:20 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:50:21 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:50:23 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@3b4e75c6[sql=[update account set description = ?, document = ?, openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ? where id = ?], parameters=[[primeirooo], [], [0.0], [0.0], [0], [0], [], [0], [null]]]
+Fri Jun 23 20:50:23 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeirooo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@2604c333
+ pelo usuário : admin
+Fri Jun 23 20:51:07 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:51:09 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@12ed4fca[sql=[update account set description = ?, document = ?, openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ? where id = ?], parameters=[[primeiroo], [], [0.0], [0.0], [0], [0], [], [0], [null]]]
+Fri Jun 23 20:51:09 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeiroo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@67d4999c
+ pelo usuário : admin
+Fri Jun 23 20:51:57 BRT 2017 | Tela de login aberta
+Fri Jun 23 20:52:02 BRT 2017 | O usuário admin realizou o login
+Fri Jun 23 20:52:03 BRT 2017 | Aberta janela de registro de contas
+Fri Jun 23 20:52:05 BRT 2017 | Editando conta de codigo 
+Fri Jun 23 20:52:07 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@2335bb6[sql=[update account set description = ?, document = ?, openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ? where id = ?], parameters=[[primeiroo], [], [0.0], [0.0], [0], [0], [], [0], [0]]]
+Fri Jun 23 20:52:07 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: primeiroo
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@76ccdbee
+ pelo usuário : admin

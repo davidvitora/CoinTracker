@@ -12,6 +12,8 @@ import com.empresa.sistema.cointracker.frames.internalFrames.RegisterProviderJIn
 import cointracker.util.LogMaker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,10 +29,15 @@ public class MainActionListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if("buttonRegisterAccountClicked".equals(e.getActionCommand())){
-            RegisterAccountJInternalFrame registerAccountJInternalFrame = new RegisterAccountJInternalFrame(frame.getAccountList(), frame.getSession());
-            frame.desktopPane.add(registerAccountJInternalFrame);
-            registerAccountJInternalFrame.setVisible(true);
-            LogMaker.log("Aberta janela de registro de contas");
+            RegisterAccountJInternalFrame registerAccountJInternalFrame;
+            try {
+                registerAccountJInternalFrame = new RegisterAccountJInternalFrame(frame.getSession());
+                frame.desktopPane.add(registerAccountJInternalFrame);
+                registerAccountJInternalFrame.setVisible(true);
+                LogMaker.log("Aberta janela de registro de contas");
+            } catch (Exception ex) {
+                LogMaker.log(ex.getMessage());
+            }
         }else if("buttonRegisterProviderClicked".equals(e.getActionCommand())){
             RegisterProviderJInternalFrame registerProviderJInternalFrame = new RegisterProviderJInternalFrame(frame.getProviderList(), frame.getSession());
             frame.desktopPane.add(registerProviderJInternalFrame);

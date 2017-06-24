@@ -39,19 +39,6 @@ public class MainJFrame extends javax.swing.JFrame {
         this.categoriesList = categoriesList;
     }
 
-    /**
-     * @return the accountList
-     */
-    public ArrayList<Account> getAccountList() {
-        return accountList;
-    }
-
-    /**
-     * @param accountList the accountList to set
-     */
-    public void setAccountList(ArrayList<Account> accountList) {
-        this.accountList = accountList;
-    }
 
     /**
      * @return the providerList
@@ -73,7 +60,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
     /**Objetos de listas*/
     private ArrayList<Category> categoriesList = new ArrayList<Category>();
-    private ArrayList<Account> accountList = new ArrayList<Account>();
     private ArrayList<Provider> providerList = new ArrayList<Provider>();
     
     public MainJFrame(Session session) {

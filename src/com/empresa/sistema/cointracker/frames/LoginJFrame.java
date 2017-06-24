@@ -30,7 +30,6 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() throws IOException {
         initComponents();
-        this.buttonLogin.addActionListener(listener);
         labelPassword.setVisible(false);
         labelUser.setVisible(false);
         if(UserHistory.readUser() != null){
@@ -213,7 +212,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_textUserFocusGained
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
-        
+
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void textUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textUserKeyTyped

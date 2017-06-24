@@ -5,6 +5,7 @@
  */
 package com.empresa.sistema.database;
 
+import cointracker.util.LogMaker;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import com.empresa.sistema.cointracker.entities.Account;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,6 +63,7 @@ public class AccountDAO {
         return null;
     }
     
+    
     public Account getAccount(int id) throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
         String sql = "select * from account where id = ?";
@@ -72,7 +75,7 @@ public class AccountDAO {
             Account account;
             while(result.next()){
                 account = new Account();
-                account.setId(result.getInt("int"));
+                account.setId(result.getInt("id"));
                 account.setDescription(result.getString("description"));
                 account.setDocument(result.getString("document"));
                 account.setOpeningBalance(result.getDouble("openingbalance"));
@@ -84,6 +87,8 @@ public class AccountDAO {
             }
             con.commit();
         }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            ex.printStackTrace();
             con.rollback();
         }finally{
             con.close();
@@ -91,9 +96,11 @@ public class AccountDAO {
         return null;
     }
     
-    public boolean saveAccount(Account account) throws SQLException, Exception{
+    public boolean updateAccount(Account account) throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "insert into account (description,document,openingbalance,balance,ownertype,type,ownername)";
+        String sql = "update account set description = ?, document = ?, "
+                + "openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ? "
+                + "where id = ?";
         PreparedStatement prepare;
         try{
             prepare = con.prepareStatement(sql);
@@ -104,13 +111,46 @@ public class AccountDAO {
             prepare.setInt(5, account.getOwnerType());
             prepare.setInt(6, account.getType());
             prepare.setString(7, account.getOwnerName());
+            prepare.setInt(8, account.getId());
+            prepare.setInt(9, account.getId());
+            LogMaker.log(prepare.toString());
+            prepare.execute();
             con.commit();
+            con.close();
             return true;
         }catch(SQLException ex){
-            con.rollback();
-        }finally{
-            con.close();
-        }    
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            con.close(); 
+        }
         return false;
+    }
+    
+    public boolean saveAccount(Account account) throws SQLException, Exception{
+        con = ConnectionFactory.getConnection();
+        String sql = "insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)"
+                + "values (?,?,?,?,?,?,?,?)";
+        PreparedStatement prepare;
+        try{
+            prepare = con.prepareStatement(sql);
+            prepare.setString(1, account.getDescription());
+            prepare.setString(2, account.getDocument());
+            prepare.setDouble(3, account.getOpeningBalance());
+            prepare.setDouble(4, account.getBalance());
+            prepare.setInt(5, account.getOwnerType());
+            prepare.setInt(6, account.getType());
+            prepare.setString(7, account.getOwnerName());
+            prepare.setInt(8, account.getId());
+            LogMaker.log(prepare.toString());
+            prepare.execute();
+            con.commit();
+            con.close();
+            return true;
+        }catch(SQLException ex){
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            con.close(); 
+        }
+        return false; 
     }
 }

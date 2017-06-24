@@ -6,6 +6,9 @@ import com.empresa.sistema.cointracker.frames.internalFrames.RegisterAccountJInt
 import cointracker.util.LogMaker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class RegisterAccountActionListener implements ActionListener {
     
@@ -20,12 +23,8 @@ public class RegisterAccountActionListener implements ActionListener {
         if("OkRegisterAccount".equals(e.getActionCommand())){
             frame.saveChanges();
             frame.setEditMode(false);
-            if(frame.listAccount.contains(frame.getAccount())){
-                return;
-            }
-            frame.listAccount.add(frame.getAccount());
-            frame.idAccount = frame.getAccount().getId();
-            
+            frame.updateAccountsIds();
+            frame.indexAccount = frame.getAccountIdsList().indexOf(frame.getAccount().getId());
             String tipoConta;
             if(frame.getAccount().getType() == 0){
                 tipoConta = "0 - Pessoal";
@@ -50,39 +49,54 @@ public class RegisterAccountActionListener implements ActionListener {
             + "\n Nome do responsavel: " + frame.getAccount().getOwnerName()
             + "\n Tipo de pessoa responsavel: " + tipoDono
             + "\n CNPJ do responsavel: " + frame.getAccount() + "\n pelo usuário : " + this.frame.getSession().getUser().getName());
-            
         }else if("buttonEditCliked".equals(e.getActionCommand())){
             if(frame.buttonEdit.getText().equals("Editar")){
                 frame.setEditMode(true);
-                LogMaker.log("Editando conta de codigo " + frame.idAccount);
+                LogMaker.log("Editando conta de codigo ");
             }else{
                 frame.setEditMode(false);
-                frame.readAccount(frame.listAccount.get(frame.idAccount));
-                LogMaker.log("Cancelada edição de conta " + frame.idAccount);
+                try {
+                    frame.readAccount(frame.getAccount());
+                } catch (Exception ex) {
+                    LogMaker.log(ex.getMessage());
+                }
+                LogMaker.log("Cancelada edição de conta ");
             }
         }
         else if("buttonLeftCliked".equals(e.getActionCommand())){
-            if(frame.idAccount != 0){
-                frame.idAccount -= 1;
-                frame.readAccount(frame.listAccount.get(frame.idAccount));
-                LogMaker.log("Acesso a conta de codigo " + frame.idAccount);
+            if((frame.indexAccount - 1) >= 0){
+                frame.indexAccount -= 1;
+                try{
+                    frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
+                    frame.readAccount(frame.getAccount());
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Erro");
+                }
             }
         }
         else if("buttonRigthCliked".equals(e.getActionCommand())){
-            if(frame.idAccount < frame.listAccount.size() - 1){
-                frame.idAccount += 1;
-                frame.readAccount(frame.listAccount.get(frame.idAccount));
-                LogMaker.log("Acesso a conta de codigo " + frame.idAccount);
+            if((frame.indexAccount + 1 ) < frame.getAccountIdsList().size()){
+                frame.indexAccount += 1;
+                try{
+                    frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
+                    frame.readAccount(frame.getAccount());
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Erro");
+                }
             }
         }else if("buttonNewCliked".equals(e.getActionCommand())){
             if(frame.buttonNew.getText().equals("Novo")){
                 frame.setAccount(new Account());
-                frame.getAccount().setId(frame.listAccount.size());
+                frame.getAccount().setId(frame.verifyOpenId());
                 frame.readAccount(frame.getAccount());
                 frame.setEditMode(true);
+                frame.buttonEdit.setEnabled(false);
                 LogMaker.log("Criando nova conta");
             }else{
-                LogMaker.log("Desfeita a edição de conta" + frame.idAccount);
+                
+                LogMaker.log("Desfeita a edição de conta");
                 frame.readAccount(frame.getAccount());
             }
         }else if("comboBoxDocumentAction".equals(e.getActionCommand())){
