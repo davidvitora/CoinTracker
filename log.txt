@@ -2262,3 +2262,133 @@ Estado : dawd
 Cidade : dawd
 Bairro : dawd
 Número : 
+Fri Jul 07 19:11:58 BRT 2017 | Tela de login aberta
+Fri Jul 07 19:12:09 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 19:12:12 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 19:12:18 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 19:12:21 BRT 2017 | Editando fornecedor de codigo 1
+Fri Jul 07 19:12:24 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@63b7abe7[sql=[update provider set name = ?, document = ?, type = ? , id = ?, country = ?, state = ?,city = ?, district = ?, street = ?, number = ?,activated = ? where id = ?], parameters=[[dadaw], [22222222222], [0], [1], [0], [dawd], [dawd], [dawd], [], [0], [true], [1]]]
+Fri Jul 07 19:12:24 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 22222222222
+Nome : dadaw
+Pais : 0
+Estado : dawd
+Cidade : dawd
+Bairro : dawd
+Número : 0
+Fri Jul 07 19:12:26 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 19:12:32 BRT 2017 | Desfeita a edição de conta
+Fri Jul 07 19:12:37 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@46155b0e[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[teste], [], [0.0], [0.0], [0], [0], [], [0]]]
+Fri Jul 07 19:12:37 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: teste
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@684c6d20
+ pelo usuário : admin
+Fri Jul 07 19:12:47 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 19:13:00 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@5a99dfb5[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[Telefone], [0], [Despesa]]]
+Fri Jul 07 19:13:00 BRT 2017 | Salva a categoria 
+Id : 0
+Descrição : Telefone
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 19:13:01 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:13:09 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@32a1ee64[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[Combustivel], [1], [Despesa]]]
+Fri Jul 07 19:13:09 BRT 2017 | Salva a categoria 
+Id : 1
+Descrição : Combustivel
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 19:13:09 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:13:16 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@74d5ed5b[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[Salario], [2], [Receita]]]
+Fri Jul 07 19:13:16 BRT 2017 | Salva a categoria 
+Id : 2
+Descrição : Salario
+Tipo : Receita
+ pelo usuário admin
+Fri Jul 07 19:13:22 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:13:41 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:13:49 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@248f4189[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[agua], [3], [Despesa]]]
+Fri Jul 07 19:13:49 BRT 2017 | Salva a categoria 
+Id : 3
+Descrição : agua
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 19:13:50 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:13:56 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@5c2f0fec[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[Luz], [4], [Despesa]]]
+Fri Jul 07 19:13:56 BRT 2017 | Salva a categoria 
+Id : 4
+Descrição : Luz
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 19:14:01 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@5525cd39
+Fri Jul 07 19:14:04 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@77f91d0a[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[Agua], [3], [Despesa]]]
+Fri Jul 07 19:14:04 BRT 2017 | Salva a categoria 
+Id : 3
+Descrição : Agua
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 19:14:07 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 19:14:46 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@7e0add4b[sql=[insert into provider (name,document,type,id,country,state,city,district,street,number,activated)values (?,?,?,?,?,?,?,?,?,?,?)], parameters=[[Empresa], [48548948940001], [1], [0], [0], [], [], [], [], [0], [true]]]
+Fri Jul 07 19:14:46 BRT 2017 | Fornecedor salvo 
+Id : 0
+Número do documento : 48548948940001
+Nome : Empresa
+Pais : 0
+Estado : 
+Cidade : 
+Bairro : 
+Número : 
+Fri Jul 07 19:14:50 BRT 2017 | Criando nova conta
+Fri Jul 07 19:15:55 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@3a46364[sql=[insert into provider (name,document,type,id,country,state,city,district,street,number,activated)values (?,?,?,?,?,?,?,?,?,?,?)], parameters=[[João Pedro], [48948948997], [0], [1], [0], [], [], [], [], [0], [true]]]
+Fri Jul 07 19:15:55 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 48948948997
+Nome : João Pedro
+Pais : 0
+Estado : 
+Cidade : 
+Bairro : 
+Número : 
+Fri Jul 07 19:16:00 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 19:16:29 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@7fa700b1[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[Banco do Brasil], [09317248993], [1500.0], [0.0], [0], [0], [David Vitor Antonio], [0]]]
+Fri Jul 07 19:16:29 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: Banco do Brasil
+ Saldo Atual: 0.0
+ Saldo Inicial: 1500.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: David Vitor Antonio
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@7a319801
+ pelo usuário : admin
+Fri Jul 07 19:16:32 BRT 2017 | Criando nova conta
+Fri Jul 07 19:17:47 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@1f4c844b[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[Banco Caixa], [09317848993], [1400.0], [0.0], [0], [0], [David Vitor Antonio], [1]]]
+Fri Jul 07 19:17:47 BRT 2017 | Registro de cadastro de conta salvo
+ id: 1
+ Descrição: Banco Caixa
+ Saldo Atual: 0.0
+ Saldo Inicial: 1400.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: David Vitor Antonio
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@5724afe7
+ pelo usuário : admin
+Fri Jul 07 19:17:49 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 19:17:51 BRT 2017 | Editando fornecedor de codigo 0
+Fri Jul 07 19:18:15 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@d55b7a5[sql=[update provider set name = ?, document = ?, type = ? , id = ?, country = ?, state = ?,city = ?, district = ?, street = ?, number = ?,activated = ? where id = ?], parameters=[[Empresa], [48548948940001], [1], [0], [0], [Santa Catarina], [Criciuma], [Ana Maria], [], [425], [true], [0]]]
+Fri Jul 07 19:18:15 BRT 2017 | Fornecedor salvo 
+Id : 0
+Número do documento : 48548948940001
+Nome : Empresa
+Pais : 0
+Estado : Santa Catarina
+Cidade : Criciuma
+Bairro : Ana Maria
+Número : 425
+Fri Jul 07 19:18:30 BRT 2017 | Aberta janela de registro de fornecedores
