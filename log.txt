@@ -2067,3 +2067,198 @@ Thu Jul 06 22:59:24 BRT 2017 | O usuário admin realizou o login
 Thu Jul 06 22:59:28 BRT 2017 | Tela de login aberta
 Thu Jul 06 22:59:36 BRT 2017 | socket creation error
 Thu Jul 06 22:59:36 BRT 2017 | Usuário ou senha digitados incorretamente, login falhou
+Fri Jul 07 00:00:30 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:00:33 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:00:36 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:00:38 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 00:00:40 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:00:43 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:00:45 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@4879c83f[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[dawdwa], [], [0.0], [0.0], [0], [0], [], [0]]]
+Fri Jul 07 00:00:45 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dawdwa
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: 
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@79a637ec
+ pelo usuário : admin
+Fri Jul 07 00:00:48 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:00:51 BRT 2017 | For input string: ""
+Fri Jul 07 00:01:11 BRT 2017 | Editando fornecedor de codigo 0
+Fri Jul 07 00:01:11 BRT 2017 | For input string: ""
+Fri Jul 07 00:01:28 BRT 2017 | Editando fornecedor de codigo 0
+Fri Jul 07 00:01:44 BRT 2017 | For input string: ""
+Fri Jul 07 00:02:45 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:02:48 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:02:50 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:02:52 BRT 2017 | Criando nova conta
+Fri Jul 07 00:03:10 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@1c6987f3[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[dawdaw], [33333333333], [0.0], [0.0], [0], [0], [dadwad], [1]]]
+Fri Jul 07 00:03:10 BRT 2017 | Registro de cadastro de conta salvo
+ id: 1
+ Descrição: dawdaw
+ Saldo Atual: 0.0
+ Saldo Inicial: 0.0
+ Tipo de conta: 0 - Pessoal
+ Nome do responsavel: dadwad
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@dc6543d
+ pelo usuário : admin
+Fri Jul 07 00:03:38 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:03:41 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 00:03:44 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@538084ae[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[dawdwa], [0], [Despesa]]]
+Fri Jul 07 00:03:44 BRT 2017 | Salva a categoria 
+Id : 0
+Descrição : dawdwa
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 00:03:54 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 00:03:56 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@18b79596[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[dawdawdwd], [0], [Receita]]]
+Fri Jul 07 00:03:56 BRT 2017 | Salva a categoria 
+Id : 0
+Descrição : dawdawdwd
+Tipo : Receita
+ pelo usuário admin
+Fri Jul 07 00:03:58 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@4620499e
+Fri Jul 07 00:04:00 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@30c5b7a8[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[dawdawd], [1], [Despesa]]]
+Fri Jul 07 00:04:00 BRT 2017 | Salva a categoria 
+Id : 1
+Descrição : dawdawd
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 00:04:01 BRT 2017 | Nova categoria está sendo criada pelo usuário com.empresa.sistema.cointracker.entities.User@4620499e
+Fri Jul 07 00:04:03 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@3977233f[sql=[insert into category(description,id,type)values (?,?,?)], parameters=[[dwadwa], [2], [Despesa]]]
+Fri Jul 07 00:04:03 BRT 2017 | Salva a categoria 
+Id : 2
+Descrição : dwadwa
+Tipo : Despesa
+ pelo usuário admin
+Fri Jul 07 00:04:10 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:04:16 BRT 2017 | For input string: ""
+Fri Jul 07 00:04:29 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:04:33 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:04:35 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 00:04:37 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:04:39 BRT 2017 | For input string: ""
+Fri Jul 07 00:04:50 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:06:39 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:06:44 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:06:49 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:06:51 BRT 2017 | For input string: ""
+Fri Jul 07 00:07:34 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:07:36 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:07:37 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:07:40 BRT 2017 | For input string: ""
+Fri Jul 07 00:10:36 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:10:39 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:10:42 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:10:48 BRT 2017 | For input string: ""
+Fri Jul 07 00:11:01 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:11:53 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:11:56 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:11:58 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:12:01 BRT 2017 | For input string: ""
+Fri Jul 07 00:14:05 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:14:08 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:14:09 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:14:13 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@41ad12ea[sql=[insert into provider (name,document,type,id,country,state,city,district,street,number,activated)values (?,?,?,?,?,?,?,?,?,?,?)], parameters=[[dadawdw], [], [0], [0], [0], [], [], [], [], [0], [false]]]
+Fri Jul 07 00:14:13 BRT 2017 | Fornecedor salvo 
+Id : 0
+Número do documento : 
+Nome : dadawdw
+Pais : 0
+Estado : 
+Cidade : 
+Bairro : 
+Número : 
+Fri Jul 07 00:14:19 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:14:25 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:16:22 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:16:26 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:16:34 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:16:41 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:16:45 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:16:47 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:17:06 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@1bc79455[sql=[insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)values (?,?,?,?,?,?,?,?)], parameters=[[dawd], [22222222222], [222.0], [0.0], [0], [1], [dadwa], [0]]]
+Fri Jul 07 00:17:06 BRT 2017 | Registro de cadastro de conta salvo
+ id: 0
+ Descrição: dawd
+ Saldo Atual: 0.0
+ Saldo Inicial: 222.0
+ Tipo de conta: 1 - Compartilhada
+ Nome do responsavel: dadwa
+ Tipo de pessoa responsavel: 0 - Fisica
+ CNPJ do responsavel: com.empresa.sistema.cointracker.entities.Account@25956303
+ pelo usuário : admin
+Fri Jul 07 00:17:09 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:17:12 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:17:15 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:17:17 BRT 2017 | Criando nova conta
+Fri Jul 07 00:17:36 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@7b2228b4[sql=[insert into provider (name,document,type,id,country,state,city,district,street,number,activated)values (?,?,?,?,?,?,?,?,?,?,?)], parameters=[[dadaw], [22222222222], [0], [1], [0], [dawd], [dawd], [dawd], [dawdawdawd], [0], [true]]]
+Fri Jul 07 00:17:36 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 22222222222
+Nome : dadaw
+Pais : 0
+Estado : dawd
+Cidade : dawd
+Bairro : dawd
+Número : 
+Fri Jul 07 00:18:16 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:18:21 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:18:22 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:18:56 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:18:59 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:19:01 BRT 2017 | Aberta janela de registro de contas
+Fri Jul 07 00:19:03 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:20:26 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:20:29 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:20:31 BRT 2017 | Aberta janela de registro de categorias
+Fri Jul 07 00:20:34 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:20:35 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:20:45 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:20:48 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:20:50 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:21:11 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:21:14 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:21:15 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:21:31 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:21:34 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:21:37 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:21:42 BRT 2017 | Editando fornecedor de codigo 1
+Fri Jul 07 00:21:44 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@450ba240[sql=[update provider set name = ?, document = ?, type = ? , id = ?, country = ?, state = ?,city = ?, district = ?, street = ?, number = ?,activated = ? where id = ?], parameters=[[dadaw], [22222222222], [0], [1], [0], [dawd], [dawd], [dawd], [], [22], [true], [1]]]
+Fri Jul 07 00:21:44 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 22222222222
+Nome : dadaw
+Pais : 0
+Estado : dawd
+Cidade : dawd
+Bairro : dawd
+Número : 22
+Fri Jul 07 00:21:51 BRT 2017 | Editando fornecedor de codigo 1
+Fri Jul 07 00:21:55 BRT 2017 | For input string: ""
+Fri Jul 07 00:21:56 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 22222222222
+Nome : dadaw
+Pais : 0
+Estado : dawd
+Cidade : dawd
+Bairro : dawd
+Número : 
+Fri Jul 07 00:22:16 BRT 2017 | Tela de login aberta
+Fri Jul 07 00:22:31 BRT 2017 | O usuário admin realizou o login
+Fri Jul 07 00:22:32 BRT 2017 | Aberta janela de registro de fornecedores
+Fri Jul 07 00:22:41 BRT 2017 | Editando fornecedor de codigo 1
+Fri Jul 07 00:22:46 BRT 2017 | org.hsqldb.jdbc.jdbcPreparedStatement@1f06c4cb[sql=[update provider set name = ?, document = ?, type = ? , id = ?, country = ?, state = ?,city = ?, district = ?, street = ?, number = ?,activated = ? where id = ?], parameters=[[dadaw], [22222222222], [0], [1], [0], [dawd], [dawd], [dawd], [], [0], [true], [1]]]
+Fri Jul 07 00:22:46 BRT 2017 | Fornecedor salvo 
+Id : 1
+Número do documento : 22222222222
+Nome : dadaw
+Pais : 0
+Estado : dawd
+Cidade : dawd
+Bairro : dawd
+Número : 

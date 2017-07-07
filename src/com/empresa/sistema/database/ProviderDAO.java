@@ -128,7 +128,12 @@ public class ProviderDAO {
             prepare.setString(7, provider.getCity());
             prepare.setString(8, provider.getDistrict());
             prepare.setString(9, provider.getStreet());
-            prepare.setInt(10, Integer.parseInt(provider.getNumber()));
+            prepare.setInt(10, 0);
+            try{
+                prepare.setInt(10, Integer.parseInt(provider.getNumber()));
+            }catch(NumberFormatException ex){
+                
+            }
             prepare.setBoolean(11, provider.isActivated());
             prepare.setInt(12, provider.getId());
             LogMaker.log(prepare.toString());
@@ -138,7 +143,7 @@ public class ProviderDAO {
             return true;
         }catch(SQLException ex){
             LogMaker.log(ex.getMessage());
-            JOptionPane.showMessageDialog(null, ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage() + "aaa");
             con.close(); 
         }
         return false;
@@ -161,7 +166,12 @@ public class ProviderDAO {
             prepare.setString(7, provider.getCity());
             prepare.setString(8, provider.getDistrict());
             prepare.setString(9, provider.getStreet());
-            prepare.setInt(10, Integer.parseInt(provider.getNumber()));
+            prepare.setInt(10, 0);
+            try{
+                prepare.setInt(10, Integer.parseInt(provider.getNumber()));
+            }catch(NumberFormatException ex){
+                
+            }
             prepare.setBoolean(11, provider.isActivated());
             LogMaker.log(prepare.toString());
             prepare.execute();
