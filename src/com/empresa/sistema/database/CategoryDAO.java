@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.empresa.sistema.database;
 
 import cointracker.util.LogMaker;
@@ -11,21 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.empresa.sistema.cointracker.entities.Account;
+import com.empresa.sistema.cointracker.entities.Category;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author David .V
- */
-public class AccountDAO {
+public class CategoryDAO {
     
     Connection con;
     
-    public int getAccountsCount() throws SQLException, Exception{
+    public int getCategorysCount() throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "SELECT COUNT(id) from account";
+        String sql = "SELECT COUNT(id) from category";
         PreparedStatement prepare;
         try{
             prepare = con.prepareStatement(sql);
@@ -42,19 +34,23 @@ public class AccountDAO {
         return 0;
     }
     
-    public List<Integer> getAccountsId() throws SQLException, Exception{
+    public void novo(){
+        
+    }
+    
+    public List<Integer> getCategorysId() throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "SELECT id from account";
+        String sql = "SELECT id from category";
         PreparedStatement prepare;
-        List<Integer> accountsIds = new ArrayList<Integer>();
+        List<Integer> categorysIds = new ArrayList<Integer>();
         try{
             prepare = con.prepareStatement(sql);
             ResultSet result = prepare.executeQuery();
             while(result.next()){
-                accountsIds.add(result.getInt("id"));
+                categorysIds.add(result.getInt("id"));
             }
             con.commit();
-            return accountsIds;
+            return categorysIds;
         }catch(SQLException ex){
             con.rollback();
         }finally{
@@ -64,26 +60,21 @@ public class AccountDAO {
     }
     
     
-    public Account getAccount(int id) throws SQLException, Exception{
+    public Category getCategory(int id) throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "select * from account where id = ?";
+        String sql = "select * from category where id = ?";
         PreparedStatement prepare;
         try{
             prepare = con.prepareStatement(sql);
             prepare.setInt(1, id);
             ResultSet result = prepare.executeQuery();
-            Account account;
+            Category category;
             while(result.next()){
-                account = new Account();
-                account.setId(result.getInt("id"));
-                account.setDescription(result.getString("description"));
-                account.setDocument(result.getString("document"));
-                account.setOpeningBalance(result.getDouble("openingbalance"));
-                account.setBalance(result.getDouble("balance"));
-                account.setOwnerName(result.getString("ownername"));
-                account.setOwnerType(result.getInt("ownertype"));
-                account.setType(result.getInt("type"));
-                return account;
+                category = new Category();
+                category.setId(result.getInt("id"));
+                category.setDescription(result.getString("description"));
+                category.setType(result.getString("type"));
+                return category;
             }
             con.commit();
         }catch(SQLException ex){
@@ -96,42 +87,17 @@ public class AccountDAO {
         return null;
     }
     
-    public boolean deleteAccount(int id) throws SQLException, Exception{
+    public boolean updateCategory(Category category) throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "delete from account where id = ?";
-        PreparedStatement prepare;
-        try{
-            prepare = con.prepareStatement(sql);
-            prepare.setInt(1, id);
-            prepare.execute();
-            con.commit();
-            con.close();
-            return true;
-        }catch(SQLException ex){
-            LogMaker.log(ex.getMessage());
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-            con.close(); 
-        }
-        return false;
-    }
-    
-    public boolean updateAccount(Account account) throws SQLException, Exception{
-        con = ConnectionFactory.getConnection();
-        String sql = "update account set description = ?, document = ?, "
-                + "openingbalance = ?, balance = ?, ownertype = ?, type = ? , ownername = ?, id = ? "
+        String sql = "update category set description = ?, id = ?, type = ? "
                 + "where id = ?";
         PreparedStatement prepare;
         try{
             prepare = con.prepareStatement(sql);
-            prepare.setString(1, account.getDescription());
-            prepare.setString(2, account.getDocument());
-            prepare.setDouble(3, account.getOpeningBalance());
-            prepare.setDouble(4, account.getBalance());
-            prepare.setInt(5, account.getOwnerType());
-            prepare.setInt(6, account.getType());
-            prepare.setString(7, account.getOwnerName());
-            prepare.setInt(8, account.getId());
-            prepare.setInt(9, account.getId());
+            prepare.setString(1, category.getDescription());
+            prepare.setInt(2, category.getId());
+            prepare.setString(3, category.getType());
+            prepare.setInt(4, category.getId());
             LogMaker.log(prepare.toString());
             prepare.execute();
             con.commit();
@@ -145,21 +111,35 @@ public class AccountDAO {
         return false;
     }
     
-    public boolean saveAccount(Account account) throws SQLException, Exception{
+    public boolean deleteCategory(int id) throws SQLException, Exception{
         con = ConnectionFactory.getConnection();
-        String sql = "insert into account (description,document,openingbalance,balance,ownertype,type,ownername,id)"
-                + "values (?,?,?,?,?,?,?,?)";
+        String sql = "delete from category where id = ?";
         PreparedStatement prepare;
         try{
             prepare = con.prepareStatement(sql);
-            prepare.setString(1, account.getDescription());
-            prepare.setString(2, account.getDocument());
-            prepare.setDouble(3, account.getOpeningBalance());
-            prepare.setDouble(4, account.getBalance());
-            prepare.setInt(5, account.getOwnerType());
-            prepare.setInt(6, account.getType());
-            prepare.setString(7, account.getOwnerName());
-            prepare.setInt(8, account.getId());
+            prepare.setInt(1, id);
+            prepare.execute();
+            con.commit();
+            con.close();
+            return true;
+        }catch(SQLException ex){
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            con.close(); 
+        }
+        return false;
+    }
+    
+    public boolean saveCategory(Category category) throws SQLException, Exception{
+        con = ConnectionFactory.getConnection();
+        String sql = "insert into category(description,id,type)"
+                + "values (?,?,?)";
+        PreparedStatement prepare;
+        try{
+            prepare = con.prepareStatement(sql);
+            prepare.setString(1, category.getDescription());
+            prepare.setInt(2, category.getId());
+            prepare.setString(3, category.getType());
             LogMaker.log(prepare.toString());
             prepare.execute();
             con.commit();

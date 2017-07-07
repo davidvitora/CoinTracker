@@ -22,38 +22,47 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="inputDescription" max="32767" attributes="0"/>
-                              <Component id="comboType" alignment="0" pref="171" max="32767" attributes="0"/>
-                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="InputID" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="comboType" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="buttonOK" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="buttonEdit" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="buttonNovo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
                               <Component id="buttonBack" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="buttonFoward" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="textDescription" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labelIdCategory" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
-                      <Component id="buttonDelete" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonEdit" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonOK" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,29 +70,30 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buttonBack" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonFoward" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="buttonFoward" max="32767" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="buttonNovo" alignment="3" pref="31" max="32767" attributes="0"/>
+                      <Component id="buttonBack" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="buttonEdit" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="InputID" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelIdCategory" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="inputDescription" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="textDescription" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="comboType" min="-2" pref="30" max="-2" attributes="0"/>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="buttonOK" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonEdit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="comboType" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="buttonOK" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,11 +105,12 @@
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonEdit.setActionCommand(&quot;Edit&quot;);"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonBack">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonBack.setActionCommand(&quot;Back&quot;);"/>
@@ -107,7 +118,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonFoward">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+        <Property name="text" type="java.lang.String" value="&gt;"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonFoward.setActionCommand(&quot;Forward&quot;);"/>
@@ -118,7 +129,7 @@
         <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputDescription">
+    <Component class="javax.swing.JTextField" name="textDescription">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -141,35 +152,40 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ID"/>
+        <Property name="text" type="java.lang.String" value="Codigo da categoria : "/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jLabel3.setVisible(false);"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JTextField" name="InputID">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="InputID.setVisible(false);"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="buttonOK">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gravar"/>
+        <Property name="text" type="java.lang.String" value="Ok"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonOK.setActionCommand(&quot;OK&quot;);&#xa;buttonOK.addActionListener(this.actionListener);"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="buttonDelete">
+    <Component class="javax.swing.JButton" name="buttonNovo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir"/>
+        <Property name="text" type="java.lang.String" value="Novo"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[57, 31]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[57, 31]"/>
+        </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNovoActionPerformed"/>
+      </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="buttonDelete.setActionCommand(&quot;Delete&quot;);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="buttonNovo.setActionCommand(&quot;Novo&quot;);"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelIdCategory">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

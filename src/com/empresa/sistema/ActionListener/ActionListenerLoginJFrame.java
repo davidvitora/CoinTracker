@@ -37,7 +37,7 @@ public class ActionListenerLoginJFrame implements ActionListener {
             try {
                 user = dao.getUser(frame.textUser.getText(), frame.textPassword.getText());
             } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    JOptionPane.showMessageDialog(null, "Problemas ao verificar usuário no banco de dados");
                     LogMaker.log(ex.getMessage());
             }
             if(user != null){

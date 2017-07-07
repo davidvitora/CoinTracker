@@ -270,15 +270,11 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        RegisterFixExpenseInternalJFrame fixExpense = new RegisterFixExpenseInternalJFrame(getSession());
-        desktopPane.add(fixExpense);
-        fixExpense.setVisible(true);
+
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        RegisterVariableExpense variableExpense = new RegisterVariableExpense(getSession());
-        desktopPane.add(variableExpense);
-        variableExpense.setVisible(true);
+
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed

@@ -21,9 +21,40 @@ public class RegisterAccountActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if("OkRegisterAccount".equals(e.getActionCommand())){
+            if(frame.buttonOk.getText().equals("Deletar")){
+                int indexAccountToDelete = frame.getAccount().getId();
+                try {
+                    if(frame.getAccountIdsList().size() == 1){
+                        frame.getDao().deleteAccount(indexAccountToDelete);
+                        frame.dispose();
+                    }else{
+                        frame.iteratorDeleteRoutine(indexAccountToDelete);
+                        frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
+                        frame.readAccount(frame.getAccount());
+                        frame.setEditMode(false);
+                        try{
+                            frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
+                            frame.readAccount(frame.getAccount());
+                            frame.getDao().deleteAccount(indexAccountToDelete);
+                            frame.updateAccountsIds();
+                            frame.updateIterator();
+                        }catch(Exception ex){
+                            ex.printStackTrace();
+                            JOptionPane.showMessageDialog(null, "Erro ao setar conta");
+                        }
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(RegisterAccountActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return;
+            }
+            if(!frame.validar()){
+                return;
+            }
             frame.saveChanges();
             frame.setEditMode(false);
             frame.updateAccountsIds();
+            frame.updateIterator();
             frame.indexAccount = frame.getAccountIdsList().indexOf(frame.getAccount().getId());
             String tipoConta;
             if(frame.getAccount().getType() == 0){
@@ -64,8 +95,14 @@ public class RegisterAccountActionListener implements ActionListener {
             }
         }
         else if("buttonLeftCliked".equals(e.getActionCommand())){
-            if((frame.indexAccount - 1) >= 0){
-                frame.indexAccount -= 1;
+            int indexOldAccount = frame.getAccount().getId();
+            if(frame.getIterator().hasPrevious()){
+                frame.indexAccount = frame.getIterator().previous();
+                if(indexOldAccount == frame.indexAccount){
+                    if(frame.getIterator().hasPrevious()){
+                        frame.indexAccount = frame.getIterator().previous();
+                    }
+                }
                 try{
                     frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
                     frame.readAccount(frame.getAccount());
@@ -76,8 +113,14 @@ public class RegisterAccountActionListener implements ActionListener {
             }
         }
         else if("buttonRigthCliked".equals(e.getActionCommand())){
-            if((frame.indexAccount + 1 ) < frame.getAccountIdsList().size()){
-                frame.indexAccount += 1;
+            int indexOldAccount = frame.getAccount().getId();
+            if(frame.getIterator().hasNext()){
+                frame.indexAccount = frame.getIterator().next();
+                if(indexOldAccount == frame.indexAccount){
+                    if(frame.getIterator().hasNext()){
+                        frame.indexAccount = frame.getIterator().next();
+                    }
+                }
                 try{
                     frame.setAccount(frame.getDao().getAccount(frame.indexAccount));
                     frame.readAccount(frame.getAccount());

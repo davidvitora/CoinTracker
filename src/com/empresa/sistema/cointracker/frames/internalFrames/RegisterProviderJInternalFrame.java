@@ -5,12 +5,25 @@
  */
 package com.empresa.sistema.cointracker.frames.internalFrames;
 
+import cointracker.util.LogMaker;
 import com.empresa.sistema.ActionListener.RegisterProviderActionListener;
+import com.empresa.sistema.cointracker.entities.Account;
 import com.empresa.sistema.cointracker.entities.Provider;
 import com.empresa.sistema.cointracker.entities.Session;
 import com.empresa.sistema.cointracker.entities.User;
+import com.empresa.sistema.cointracker.util.CountryList;
+import com.empresa.sistema.database.AccountDAO;
+import com.empresa.sistema.database.ProviderDAO;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.event.InternalFrameListener;
+import javax.swing.event.ListDataListener;
 
 /**
  *
@@ -19,36 +32,54 @@ import javax.swing.event.InternalFrameListener;
 public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
 
     RegisterProviderActionListener actionListener;
-    public ArrayList<Provider> listProvider;
-    
-    //Guarda o registro da conta acessada
-    public int idProvider;
-    private Provider provider;
+    private ProviderDAO dao;
     private Session session;
+    public List<String> paises;
+    
+    //Guarda o registro dos fornecedores
+    //index do fornecedor acessado na lista
+    private int indexProvider;
+    //objeto do fornecedor acessado
+    private Provider provider;
+    //lista de ids de fornecedores do banco
+    private List<Integer> providersIdsList;
+    //Iterator 
+    private ListIterator<Integer> iterator;
     
     public RegisterProviderJInternalFrame(ArrayList<Provider> listProvider, Session session) {
         this.session = session;
+        paises = CountryList.countries();
         initComponents();
-        this.listProvider = listProvider;
+        this.dao = new ProviderDAO();
+        updateProvidersIds();
         actionListener = new RegisterProviderActionListener(this);
         addActionListeners();
         setEditMode(false);
+        this.iterator = this.providersIdsList.listIterator();
         initFrameAccount();
     }
     
     public void initFrameAccount(){
-        idProvider = 0;
-        if(listProvider.size() == 0){
-            setProvider(new Provider());
-            readAccount(getProvider());
-            setEditMode(true);
-            buttonEdit.setEnabled(false);
-        }else{
-            readAccount(listProvider.get(idProvider));
+        try{
+            if(getProvidersIdsList().size() == 0){
+                this.setIndexProvider(0);
+                this.setProvider(new Provider());
+                this.getProvider().setId(this.verifyOpenId());
+                this.readProvider(this.getProvider());
+                setEditMode(true);
+                buttonEdit.setEnabled(false);
+            }else{
+                this.indexProvider = this.getIterator().next();
+                setProvider(getDao().getProvider(indexProvider));
+                readProvider(getProvider());
+            }
+        }catch(Exception ex){
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage() + "Erro ao inicializar | Verifique a conexao com o banco de dados");
         }
     }
     
-    public void readAccount(Provider provider){
+    public void readProvider(Provider provider){
         this.setProvider(provider);
         labelId.setText(Integer.toString(this.getProvider().getId()));
         textFieldName.setText(this.getProvider().getName());
@@ -69,41 +100,40 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
    
     }
     
-    public void saveChanges(){
-        getProvider().setId(Integer.parseInt(labelId.getText()));
-        getProvider().setName(textFieldName.getText());
-        getProvider().setType(comboBoxType.getSelectedIndex());
-        getProvider().setDocument(textFieldDocument.getText());
-        getProvider().setActivated(checkBoxActive.isSelected());
-        getProvider().setCountry(comboBoxCountry.getSelectedIndex());
-        getProvider().setState(textFieldState.getText());
-        getProvider().setCity(textFieldCity.getText());
-        getProvider().setDistrict(textFieldDistrict.getText());
-        getProvider().setStreet(textFieldStreet.getText());
-        getProvider().setNumber(textFieldNumber.getText());
-        System.out.println("------------------------------");
-        System.out.println("Saved provider:");
-        System.out.println(Integer.parseInt(labelId.getText()));
-        System.out.println(textFieldName.getText());
-        System.out.println(comboBoxType.getSelectedIndex());
-        System.out.println(textFieldDocument.getText());
-        System.out.println(checkBoxActive.isSelected());
-        System.out.println(comboBoxCountry.getSelectedIndex());
-        System.out.println(textFieldState.getText());
-        System.out.println(textFieldCity.getText());
-        System.out.println(textFieldDistrict.getText());
-        System.out.println(textFieldStreet.getText());
-        System.out.println(textFieldNumber.getText());
-        System.out.println("------------------------------");
-        
-        
+    public void updateIterator(){
+        this.setIterator(this.getProvidersIdsList()
+                .listIterator(this.getProvidersIdsList().indexOf(this.getProvider().getId())));
+    }
+    
+    public void saveChanges(){ 
+        try {
+            getProvider().setId(Integer.parseInt(labelId.getText()));
+            getProvider().setName(textFieldName.getText());
+            getProvider().setType(comboBoxType.getSelectedIndex());
+            getProvider().setDocument(textFieldDocument.getText());
+            getProvider().setActivated(checkBoxActive.isSelected());
+            getProvider().setCountry(comboBoxCountry.getSelectedIndex());
+            getProvider().setState(textFieldState.getText());
+            getProvider().setCity(textFieldCity.getText());
+            getProvider().setDistrict(textFieldDistrict.getText());
+            getProvider().setStreet(textFieldStreet.getText());
+            getProvider().setNumber(textFieldNumber.getText());
+            if(this.getProvidersIdsList().contains(this.getProvider().getId())){
+                getDao().updateProvider(this.getProvider());
+            }else{
+                getDao().saveProvider(this.getProvider());
+            }
+        } catch (Exception ex) {
+            LogMaker.log(ex.getMessage());
+            JOptionPane.showMessageDialog(null, ex.getMessage() + "Erro");
+        }
     }
     
     public void setEditMode(boolean enable){
         
         if(enable == true){
             //Botões de controle
-            buttonOk.setEnabled(true);
+            buttonOk.setText("Ok");
             buttonLeft.setEnabled(false);
             buttonRigth.setEnabled(false);
             buttonEdit.setText("Cancelar");
@@ -119,10 +149,11 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
             textFieldStreet.setEnabled(true);
             textFieldNumber.setEnabled(true);
             comboBoxType.setEnabled(true);
+            comboBoxCountry.setEnabled(true);
             checkBoxActive.setEnabled(true);
         }else{
+            buttonOk.setText("Deletar");
             //Botões de controle
-            buttonOk.setEnabled(false);
             buttonLeft.setEnabled(true);
             buttonRigth.setEnabled(true);
             buttonEdit.setEnabled(true);
@@ -138,8 +169,70 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
             textFieldStreet.setEnabled(false);
             textFieldNumber.setEnabled(false);
             comboBoxType.setEnabled(false);
+            comboBoxCountry.setEnabled(false);
             checkBoxActive.setEnabled(false);
         }
+    }
+    
+    public void updateProvidersIds(){
+        try {
+            this.providersIdsList = dao.getProvidersId();
+        } catch (Exception ex) {
+            Logger.getLogger(RegisterAccountJInternalFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void iteratorDeleteRoutine(int indexProcToDelete){
+       if(this.iterator.hasNext()){
+           this.indexProvider = this.iterator.next();
+           if(indexProcToDelete == this.indexProvider){
+               this.indexProvider = this.iterator.next();
+           }
+       }else{
+           this.indexProvider = this.iterator.previous();
+           if(indexProcToDelete == this.indexProvider){
+               this.indexProvider = this.iterator.previous();
+           }
+       }
+    }
+    
+    public boolean validar(){
+        if(this.textFieldName.getText().length() < 2){
+            JOptionPane.showMessageDialog(null, "Digite um nome de pelo menos 3 caracteres");
+            return false;
+        }
+        if(this.textFieldDocument.getText().matches(".*[^0-9]+.*")){
+            JOptionPane.showMessageDialog(null, "O documento poderá conter apenas numeros");
+            return false;
+        }
+        if(this.textFieldNumber.getText().matches(".*[^0-9]+.*")){
+            JOptionPane.showMessageDialog(null, "O número poderá conter apenas numeros");
+            return false;
+        }
+        if(this.textFieldDocument.getText().length() > 0){
+            if(this.labelDocumentOwner.getText().equals("CNPJ : ") && this.textFieldDocument.getText().length() != 14){
+                JOptionPane.showMessageDialog(null, "O CNPJ deverá conter 14 caracteres");
+                return false;
+            }
+            if(this.labelDocumentOwner.getText().equals("CPF : ") && this.textFieldDocument.getText().length() != 11){
+                JOptionPane.showMessageDialog(null, "O CPF deverá conter 11 caracteres");
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    //Verifica um id livre para ser inserido em um novo fornecedor
+    public int verifyOpenId(){
+        int id = 0;
+        for(Integer listId : this.getProvidersIdsList()){
+            if(id != listId){
+                return id;
+            }else{
+                id++;
+            }
+        }
+        return id;
     }
     
     public void addActionListeners(){
@@ -203,6 +296,8 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
         setTitle("Fornecedores");
         setPreferredSize(new java.awt.Dimension(300, 350));
 
+        this.comboBoxCountry.setSelectedItem("Brasil");
+
         buttonRigth.setActionCommand("buttonRigthCliked");
         buttonRigth.addActionListener(this.actionListener);
         buttonRigth.setText(">");
@@ -245,6 +340,8 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel12.setText("Ativo : ");
 
+        checkBoxActive.setSelected(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -266,7 +363,7 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelDocumentOwner)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,7 +395,8 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Pais : ");
 
-        comboBoxCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasil", "Afeganistão", "África do Sul", "Albânia", "Alemanha", "Andorra", "Angola", "Antiga e Barbuda", "Arábia Saudita", "Argélia", "Argentina", "Arménia", "Austrália", "Áustria", "Azerbaijão", "Bahamas", "Bangladexe", "Barbados", "Barém", "Bélgica", "Belize", "BenimPorto ", "Bielorrússia", "Bolívia", "Bósnia e Herzegovina", "Botsuana", "Brunei", "Bulgária", "Burquina Faso", "Burúndi", "Butão", "Cabo Verde", "Camarões", "Camboja", "Canadá", "Catar", "Cazaquistão", "Chade", "Chile", "China", "Chipre", "Colômbia", "Comores", "Congo-Brazzaville", "Coreia do Norte", "Coreia do Sul", "Cosovo", "Costa do Marfim", "Costa Rica", "Croácia", "Cuaite", "Cuba", "Dinamarca", "Dominica", "Egito", "Emirados Árabes Unidos", "Equador", "Eritreia", "Eslováquia", "Eslovénia", "Espanha", "Estado da Palestina", "Estados Unidos", "Estónia", "EtiópiaAdis ", "Fiji", "Filipinas", "Finlândia", "França", "Gabão", "Gâmbia", "Gana", "Geórgia", "GranadaSão ", "Grécia", "Guatemala", "Guiana", "Guiné", "Guiné Equatorial", "Guiné-Bissau", "Haiti", "Honduras", "Hungria", "Iémen", "Ilhas Marechal", "Índia", "Indonésia", "Irão", "Iraque", "Irlanda", "Islândia", "Israel", "Itália", "Jamaica", "Japão", "Jibuti", "Jordânia", "Laus", "Lesoto", "Letónia", "Líbia", "Listenstaine", "Lituânia", "Luxemburgo", "Macedónia", "Madagáscar", "MalásiaCuala ", "Maláui", "Maldivas", "Mali", "Malta", "Marrocos", "Maurícia", "Mauritânia", "México", "Mianmar", "Micronésia", "Moçambique", "Moldávia", "Mónaco", "Mongólia", "Montenegro", "Namíbia", "Nauru", "Nepal", "Nicarágua", "Níger", "Nigéria", "Noruega", "Nova Zelândia", "Omã", "Países Baixos", "Palau", "Panamá", "Papua Nova Guiné", "Paquistão", "Paraguai", "Peru", "Polónia", "Portugal", "Quénia", "Quirguistão", "Quiribáti", "Reino Unido", "República Centro-Africana", "República Checa", "República Democrática do Congo", "República Dominicana", "Roménia", "Ruanda", "Rússia", "Salomão", "Salvador ", "Samoa", "Santa Lúcia", "São Cristóvão e Neves", "São Marinho", "São Tomé e Príncipe", "São Vicente e Granadinas", "Seicheles", "Senegal", "Serra Leoa", "Sérvia", "Singapura", "Síria", "Somália", "Sri Lanca", "Suazilândia", "Sudão", "Sudão do Sul", "Suécia", "Suíça", "Suriname", "Tailândia", "Taiuã", "Tajiquistão", "Tanzânia", "Timor-Leste", "Togo", "Tonga", "Trindade e Tobago", "Tunísia", "Turcomenistão", "Turquia", "Tuvalu", "Ucrânia", "Uganda", "Uruguai", "Usbequistão", "VanuatuPorto ", "Vaticano", "Venezuela", "Vietname", "Zâmbia", "Zimbábue" }));
+        comboBoxCountry.setEnabled(false);
 
         jLabel3.setText("Estado:");
 
@@ -320,7 +418,7 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboBoxCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboBoxCountry, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -332,7 +430,7 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textFieldDistrict, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+                        .addComponent(textFieldDistrict))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -400,16 +498,17 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
                         .addComponent(labelId)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(buttonEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonNew)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonLeft)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonRigth)
-                        .addContainerGap(34, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(buttonEdit)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonNew)
+                                .addGap(18, 18, 18)
+                                .addComponent(buttonLeft)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(buttonRigth)
+                                .addGap(0, 24, Short.MAX_VALUE))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -524,4 +623,37 @@ public class RegisterProviderJInternalFrame extends javax.swing.JInternalFrame {
     public void setSession(Session session) {
         this.session = session;
     }
+
+    public List<Integer> getProvidersIdsList() {
+        return providersIdsList;
+    }
+
+    public void setProvidersIdsList(List<Integer> providersIdsList) {
+        this.providersIdsList = providersIdsList;
+    }
+
+    public int getIndexProvider() {
+        return indexProvider;
+    }
+
+    public void setIndexProvider(int indexProvider) {
+        this.indexProvider = indexProvider;
+    }
+
+    public ProviderDAO getDao() {
+        return dao;
+    }
+
+    public void setDao(ProviderDAO dao) {
+        this.dao = dao;
+    }
+
+    public ListIterator<Integer> getIterator() {
+        return iterator;
+    }
+
+    public void setIterator(ListIterator<Integer> iterator) {
+        this.iterator = iterator;
+    }
+    
 }

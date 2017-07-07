@@ -13,6 +13,7 @@ import com.empresa.sistema.cointracker.entities.User;
 import com.empresa.sistema.database.AccountDAO;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -35,6 +36,8 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
     
     //Registro de sessão
     private Session session;
+    //Iterator
+    private ListIterator<Integer> iterator;
     
     public RegisterAccountJInternalFrame(Session session) throws Exception {
         this.session = session;
@@ -44,19 +47,21 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         actionListener = new RegisterAccountActionListener(this);
         addActionListeners();
         setEditMode(false);
+        this.iterator = this.accountIdsList.listIterator();
         initFrameAccount();
     }
     
     public void initFrameAccount(){
         try{
-            indexAccount = 0;
             if(getAccountIdsList().size() == 0){
                 this.setAccount(new Account());
+                indexAccount = 0;
                 this.getAccount().setId(this.verifyOpenId());
                 this.readAccount(this.getAccount());
                 setEditMode(true);
                 buttonEdit.setEnabled(false);
             }else{
+                this.indexAccount = this.getIterator().next();
                 setAccount(getDao().getAccount(indexAccount));
                 readAccount(getAccount());
             }
@@ -80,6 +85,56 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
         }else{
             labelDocumentOwner.setText("CNPJ : ");  
         }
+    }
+    
+    public void updateIterator(){
+       this.setIterator(this.getAccountIdsList()
+               .listIterator(this.getAccountIdsList().indexOf(this.getAccount().getId())));
+    }
+    
+    public void iteratorDeleteRoutine(int indexAccToDelete){
+       if(this.iterator.hasNext()){
+           this.indexAccount = this.iterator.next();
+           if(indexAccToDelete == this.indexAccount){
+               this.indexAccount = this.iterator.next();
+           }
+       }else{
+           this.indexAccount = this.iterator.previous();
+           if(indexAccToDelete == this.indexAccount){
+               this.indexAccount = this.iterator.previous();
+           }
+       }
+    }
+     
+    public boolean validar(){
+        if(this.textFieldDesciption.getText().length() < 2){
+            JOptionPane.showMessageDialog(null, "Digite uma descrição de pelo menos 3 caracteres");
+            return false;
+        }
+        if(this.textFieldDocument.getText().matches(".*[^0-9]+.*")){
+            JOptionPane.showMessageDialog(null, "O documento poderá conter apenas numeros");
+            return false;
+        }
+        if(this.textFieldDocument.getText().length() > 0){
+            if(this.labelDocumentOwner.getText().equals("CNPJ : ") && this.textFieldDocument.getText().length() != 14){
+                JOptionPane.showMessageDialog(null, "O CNPJ deverá conter 14 caracteres");
+                return false;
+            }
+            if(this.labelDocumentOwner.getText().equals("CPF : ") && this.textFieldDocument.getText().length() != 11){
+                JOptionPane.showMessageDialog(null, "O CPF deverá conter 11 caracteres");
+                return false;
+            }
+        }
+        try{
+            if(Double.parseDouble(this.textFieldOpeningBalance.getText()) < 0){
+                JOptionPane.showMessageDialog(null, "Digite um saldo inicial valido");
+                return false;
+            }
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Digite um saldo inicial valido");
+            return false;
+        }
+        return true;
     }
     
     public void saveChanges(){
@@ -135,6 +190,7 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
             buttonEdit.setText("Cancelar");
             buttonEdit.setEnabled(true);
             buttonNew.setText("Desfazer");
+            buttonOk.setText("Ok");
             
             //Item de formulario
             textFieldDesciption.setEnabled(true);
@@ -145,12 +201,13 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
             comboBoxOwnerType.setEnabled(true);
         }else{
             //Botões de controle
-            buttonOk.setEnabled(false);
+            buttonOk.setEnabled(true);
             buttonLeft.setEnabled(true);
             buttonRigth.setEnabled(true);
             buttonEdit.setEnabled(true);
             buttonEdit.setText("Editar");
             buttonNew.setText("Novo");
+            buttonOk.setText("Deletar");
 
             //Item de formulario
             textFieldDesciption.setEnabled(false);
@@ -359,8 +416,8 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(labelDocumentOwner)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 82, Short.MAX_VALUE)))
+                                .addComponent(textFieldDocument, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 64, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -527,5 +584,13 @@ public class RegisterAccountJInternalFrame extends javax.swing.JInternalFrame {
 
     public void setDao(AccountDAO dao) {
         this.dao = dao;
+    }
+
+    public ListIterator<Integer> getIterator() {
+        return iterator;
+    }
+
+    public void setIterator(ListIterator<Integer> iterator) {
+        this.iterator = iterator;
     }
 }
